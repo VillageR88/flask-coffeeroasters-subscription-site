@@ -2,7 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-  --bold: 700;
+  --font-regular: 400;
+  --font-bold: 700;
+  --font-black: 900;
   --barlow: "Barlow", sans-serif;
   --fraunces: "Fraunces", sans-serif;
 }
@@ -10,7 +12,7 @@
 a {
   text-decoration: none;
   color: #83888f;
-  font-weight: var(--bold);
+  font-weight: var(--font-bold);
   font-family: var(--barlow);
   font-size: 12px;
   letter-spacing: 0.92px;

@@ -9,6 +9,10 @@
       href="{{ url_for('static', filename='css/style.css') }}"
     />
     <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}"
+    />
+    <link
       rel="icon"
       href="{{ url_for('static', filename='images/favicon-32x32.png') }}"
       sizes="32x32"
@@ -20,7 +24,20 @@
 
   <body>
     {% include 'navbar.html' %}
-    <main></main>
+    <main>
+      <div>
+        <img src="../static/images/home/desktop/image-hero-coffeepress.jpg" />
+        <div>
+          <h1>Great coffee made simple.</h1>
+          <p>
+            Start your mornings with the world’s best coffees. Try our expertly
+            curated artisan coffees from our best roasters delivered directly to
+            your door, at your schedule.
+          </p>
+          <a href="/create-your-plan">Create your plan</a>
+        </div>
+      </div>
+    </main>
   </body>
 
   <script src="{{ url_for('static', filename='dist/main.js') }}"></script>
