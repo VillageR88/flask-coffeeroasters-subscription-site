@@ -60,18 +60,9 @@ def create_app():
             },
         ]
         social = [
-            {
-                "component": "./components/facebook.html",
-                "alt": "Facebook",
-            },
-            {
-                "component": "./components/twitter.html",
-                "alt": "Twitter",
-            },
-            {
-                "component": "./components/instagram.html",
-                "alt": "Instagram",
-            },
+            "./components/facebook.html",
+            "./components/twitter.html",
+            "./components/instagram.html",
         ]
         context = {
             "siteTitle": "Coffeeroasters subscription site",
