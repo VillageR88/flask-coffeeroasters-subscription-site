@@ -72,7 +72,7 @@ def create_app():
             "social": social,
         }
 
-        return render_template("home/index.html", **context)
+        return render_template("home/page.html", **context)
 
     @app.route("/robots.txt")
     def robots_txt():
