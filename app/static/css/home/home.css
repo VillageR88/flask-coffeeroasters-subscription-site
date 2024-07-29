@@ -94,13 +94,16 @@ main > div:nth-of-type(2) > div:nth-of-type(1) {
 
 main > div:nth-of-type(2) > div:nth-of-type(1) > span {
   font-family: fraunces;
-  font-weight: var(--font-black);
-  font-size: 120px;
+  font-weight: 800;
+  font-size: 140px;
+  letter-spacing: -5px;
   color: #83888f;
   line-height: 144px;
 }
 
 main > div:nth-of-type(2) > ul {
+  margin-top: -55px;
+  padding: 0px;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -111,9 +114,37 @@ main > div:nth-of-type(2) > ul {
 main > div:nth-of-type(2) > ul > li {
   display: flex;
   flex-direction: column;
+  gap: 70px;
   justify-content: center;
   align-items: center;
 }
 main > div:nth-of-type(2) > ul > li > img {
   object-fit: scale-down;
+}
+
+main > div:nth-of-type(2) > ul > li > div {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h3 {
+  font-family: fraunces;
+  font-size: 24px;
+  font-weight: var(--font-black);
+  color: #333d4b;
+  margin: 0;
+}
+
+p {
+  font-family: var(--barlow);
+  font-size: 16px;
+  font-weight: 400;
+  color: #333d4b;
+  margin: 0;
+  margin-top: 8px;
+  max-width: 255px;
+  line-height: 26px;
 }
