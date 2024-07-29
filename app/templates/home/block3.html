@@ -1,0 +1,26 @@
+<div>
+  <div>
+    <h2>Why choose us?</h2>
+    <p>
+      A large part of our role is choosing which particular coffees will be
+      featured in our range. This means working closely with the best coffee
+      growers to give you a more impactful experience on every level.
+    </p>
+  </div>
+  <ul>
+    {% for item in whyChooseUs %}
+    <li>
+      <img
+        width="72"
+        height="auto"
+        src="{{ item.image }}"
+        alt="{{ item.name }}"
+      />
+      <div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
