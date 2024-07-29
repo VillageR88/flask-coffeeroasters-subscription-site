@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify, send_from_directory
+from jinja2 import TemplateNotFound
 import logging
 
 app = Flask(__name__)
@@ -22,16 +23,11 @@ def create_your_plan():
     return render_template("create-your-plan/page.html", **context)
 
 
-@app.route("/content/<page>")
+@app.route("/<page>")
 def content(page):
-    context = get_context()
-    if page == "home":
-        return render_template("home/content.html", **context)
-    elif page == "about-us":
-        return render_template("about-us/content.html", **context)
-    elif page == "create-your-plan":
-        return render_template("create-your-plan/content.html", **context)
-    else:
+    try:
+        return render_template(f"{page}/page.html")
+    except TemplateNotFound:
         return jsonify({"error": "Page not found"}), 404
 
 

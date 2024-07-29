@@ -18,6 +18,7 @@
       sizes="32x32"
       type="image/png"
     />
+
     <link rel="prefetch" href="{{ url_for('home') }}" />
     <link rel="prefetch" href="{{ url_for('about_us') }}" />
     <link rel="prefetch" href="{{ url_for('create_your_plan') }}" />
@@ -35,26 +36,42 @@
   </body>
   <script>
     function loadContent(page) {
-      fetch(`/content/${page}`)
-        .then((response) => response.text())
+      fetch(page)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.text();
+        })
         .then((html) => {
-          document.querySelector("main").innerHTML = html;
-          history.pushState(null, "", `/${page}`);
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, "text/html");
+          const newContent = doc.querySelector("main").innerHTML;
+          const mainElement = document.querySelector("main");
+          if (mainElement) {
+            mainElement.innerHTML = newContent; // Replace main element content
+            history.pushState(null, "", page);
+          } else {
+            console.error("Main element not found");
+          }
         })
         .catch((error) => console.error("Error loading content:", error));
     }
 
     window.onpopstate = function () {
-      const path = window.location.pathname.slice(1);
-      loadContent(path || "");
+      const path = window.location.pathname;
+      loadContent(path || "/"); // Load content based on the current path
     };
 
     document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll("nav a").forEach((link) => {
+      document.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", (event) => {
           event.preventDefault();
-          const page = event.target.getAttribute("href").slice(1);
-          loadContent(page);
+          const target = event.target.closest("a");
+          if (target) {
+            const page = target.getAttribute("href");
+            loadContent(page);
+          }
         });
       });
     });
