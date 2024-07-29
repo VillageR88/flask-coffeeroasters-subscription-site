@@ -10,7 +10,7 @@
     />
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/home.css') }}"
+      href="{{ url_for('static', filename='css/home/home.css') }}"
     />
     <link
       rel="icon"
@@ -23,20 +23,10 @@
   </head>
 
   <body>
-    {% include 'navbar.html' %}
+    {% include 'components/navbar.html' %}
     <main>
-      <div>
-        <img src="../static/images/home/desktop/image-hero-coffeepress.jpg" />
-        <div>
-          <h1>Great coffee made simple.</h1>
-          <p>
-            Start your mornings with the world’s best coffees. Try our expertly
-            curated artisan coffees from our best roasters delivered directly to
-            your door, at your schedule.
-          </p>
-          <a href="/create-your-plan">Create your plan</a>
-        </div>
-      </div>
+      {% include './home/block1.html' %}
+      {% include './home/block2.html' %}
     </main>
   </body>
 

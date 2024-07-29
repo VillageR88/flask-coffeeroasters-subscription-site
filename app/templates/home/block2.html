@@ -1,0 +1,21 @@
+<div>
+  <div>
+    <span>our collection</span>
+  </div>
+  <ul>
+    {% for item in collection %}
+    <li>
+      <img
+        width="{% if loop.last %}233{% else %}255{% endif %}"
+        height="193"
+        src="{{ item.image }}"
+        alt="{{ item.name }}"
+      />
+      <div>
+        <span>{{ item.name }}</span>
+        <span>{{ item.price }}</span>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

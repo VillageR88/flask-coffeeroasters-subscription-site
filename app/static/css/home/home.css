@@ -1,6 +1,8 @@
 main {
   display: flex;
+  flex-direction: column;
   padding-top: 43px;
+  align-items: center;
 }
 
 main > div:nth-of-type(1) {
@@ -21,12 +23,13 @@ main > div:nth-of-type(1) > div {
   padding-top: 117px;
   padding-left: 85px;
   max-width: 493px;
+  width: 100%;
 }
 
 h1 {
   color: #fefcf7;
   font-size: 72px;
-  font-family: var(--fraunces);
+  font-family: fraunces;
   font-weight: var(--font-black);
   margin: 0px;
   line-height: 72px;
@@ -56,7 +59,7 @@ main > div:nth-of-type(1) > div > a {
   background-color: #0e8784;
   color: #fefcf7;
   font-size: 16px;
-  font-family: var(--fraunces);
+  font-family: fraunces;
   font-weight: var(--font-black);
   text-decoration: none;
   border-radius: 6px;
@@ -65,4 +68,52 @@ main > div:nth-of-type(1) > div > a {
 
 main > div:nth-of-type(1) > div > a:hover {
   background-color: #66d2cf;
+}
+
+main > div:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  max-width: 1111px;
+  width: 100%;
+  margin-top: 136px;
+  height: 525px;
+}
+
+main > div:nth-of-type(2) > div:nth-of-type(1) {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 196px;
+  background: linear-gradient(180deg, #979797 0%, transparent 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main > div:nth-of-type(2) > div:nth-of-type(1) > span {
+  font-family: fraunces;
+  font-weight: var(--font-black);
+  font-size: 120px;
+  color: #83888f;
+  line-height: 144px;
+}
+
+main > div:nth-of-type(2) > ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+main > div:nth-of-type(2) > ul > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main > div:nth-of-type(2) > ul > li > img {
+  object-fit: scale-down;
 }

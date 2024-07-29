@@ -6,9 +6,34 @@ def create_app():
 
     @app.route("/")
     def index():
-        context = {"siteTitle": "Coffeeroasters subscription site"}
+        collection = [
+            {
+                "image": "./static/images/home/desktop/image-gran-espresso.png",
+                "title": "Create Your Plan",
+                "description": "Build a subscription plan that best fits your needs. We offer an assortment of the best artisan coffees from around the globe delivered fresh to your door.",
+            },
+            {
+                "image": "./static/images/home/desktop/image-planalto.png",
+                "title": "Choose the best Coffee for you",
+                "description": "Customize your order frequency, quantity, even your roast style and grind type. Pause, skip or cancel your subscription with no commitment through our online portal.",
+            },
+            {
+                "image": "./static/images/home/desktop/image-piccollo.png",
+                "title": "Enjoy exclusive benefits",
+                "description": "Receive a 10% discount on all our coffee. Gain access to exclusive limited edition coffees, rare and exclusive offerings.",
+            },
+            {
+                "image": "./static/images/home/desktop/image-danche.png",
+                "title": "Enjoy exclusive benefits",
+                "description": "Receive a 10% discount on all our coffee. Gain access to exclusive limited edition coffees, rare and exclusive offerings.",
+            },
+        ]
+        context = {
+            "siteTitle": "Coffeeroasters subscription site",
+            "collection": collection,
+        }
 
-        return render_template("index.html", **context)
+        return render_template("home/index.html", **context)
 
     @app.route("/robots.txt")
     def robots_txt():

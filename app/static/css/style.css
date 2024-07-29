@@ -13,10 +13,15 @@ a {
   text-decoration: none;
   color: #83888f;
   font-weight: var(--font-bold);
-  font-family: var(--barlow);
+  font-family: barlow;
   font-size: 12px;
   letter-spacing: 0.92px;
   line-height: 15px;
+  transition: color 0.15s;
+}
+
+a:hover {
+  color: #333d4b;
 }
 
 body {
