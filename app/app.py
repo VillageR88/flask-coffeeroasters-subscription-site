@@ -59,11 +59,26 @@ def create_app():
                 "description": "We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience.",
             },
         ]
+        social = [
+            {
+                "component": "./components/facebook.html",
+                "alt": "Facebook",
+            },
+            {
+                "component": "./components/twitter.html",
+                "alt": "Twitter",
+            },
+            {
+                "component": "./components/instagram.html",
+                "alt": "Instagram",
+            },
+        ]
         context = {
             "siteTitle": "Coffeeroasters subscription site",
             "collection": collection,
             "whyChooseUs": whyChooseUs,
             "howItWorks": howItWorks,
+            "social": social,
         }
 
         return render_template("home/index.html", **context)

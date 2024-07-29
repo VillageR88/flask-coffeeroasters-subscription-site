@@ -31,9 +31,7 @@
       {% include './home/block3.html' %}
       {% include './home/block4.html' %}
     </main>
-    <footer>
-      <div>{% include './components/logo.html' %}</div>
-    </footer>
+    {% include './components/footer.html' %}
   </body>
 
   <script src="{{ url_for('static', filename='dist/main.js') }}"></script>
