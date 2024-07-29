@@ -18,6 +18,9 @@
       sizes="32x32"
       type="image/png"
     />
+    <link rel="prefetch" href="{{ url_for('home') }}" />
+    <link rel="prefetch" href="{{ url_for('about_us') }}" />
+    <link rel="prefetch" href="{{ url_for('create_your_plan') }}" />
 
     <title>{{ siteTitle }}</title>
   </head>
@@ -30,6 +33,31 @@
     </main>
     {% include 'components/footer.html' %}
   </body>
+  <script>
+    function loadContent(page) {
+      fetch(`/content/${page}`)
+        .then((response) => response.text())
+        .then((html) => {
+          document.querySelector("main").innerHTML = html;
+          history.pushState(null, "", `/${page}`);
+        })
+        .catch((error) => console.error("Error loading content:", error));
+    }
 
+    window.onpopstate = function () {
+      const path = window.location.pathname.slice(1);
+      loadContent(path || "");
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const page = event.target.getAttribute("href").slice(1);
+          loadContent(page);
+        });
+      });
+    });
+  </script>
   <script src="{{ url_for('static', filename='dist/main.js') }}"></script>
 </html>
