@@ -5,7 +5,7 @@ def create_app():
     app = Flask(__name__)
 
     @app.route("/")
-    def index():
+    def home():
         collection = [
             {
                 "image": "./static/images/home/desktop/image-gran-espresso.png",
@@ -73,6 +73,14 @@ def create_app():
         }
 
         return render_template("home/page.html", **context)
+
+    @app.route("/about-us")
+    def about_us():
+        return render_template("about-us/page.html")
+
+    @app.route("/create-your-plan")
+    def create_your_plan():
+        return render_template("create-your-plan/page.html")
 
     @app.route("/robots.txt")
     def robots_txt():
