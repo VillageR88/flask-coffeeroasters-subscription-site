@@ -10,12 +10,14 @@
   <ul>
     {% for item in whyChooseUs %}
     <li>
-      <img
-        width="72"
-        height="auto"
-        src="{{ item.image }}"
-        alt="{{ item.name }}"
-      />
+      <div>
+        <img
+          width="72"
+          height="fit-content"
+          src="{{ item.image }}"
+          alt="{{ item.name }}"
+        />
+      </div>
       <div>
         <h3>{{ item.title }}</h3>
         <p>{{ item.description }}</p>
