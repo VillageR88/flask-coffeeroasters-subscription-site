@@ -45,6 +45,11 @@ def get_context():
         {
             "image": "./static/images/home/desktop/image-gran-espresso.png",
             "title": "Gran Espresso",
+            "description": "Light and flavorful blend with cocoa and black pepper for an intense experience.",
+        },
+        {
+            "image": "./static/images/home/desktop/image-planalto.png",
+            "title": "Planalto",
             "description": "Brazilian dark roast with rich and velvety body, and hints of fruits and nuts.",
         },
         {
