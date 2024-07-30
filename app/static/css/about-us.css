@@ -1,5 +1,6 @@
 .about-us h1,
 .about-us h2,
+.about-us h3,
 .about-us p {
   margin: 0;
 }
@@ -102,4 +103,58 @@ main.about-us > div:nth-of-type(3) > img {
   border-radius: 8px;
   width: 445px;
   height: 474px;
+}
+
+main.about-us > div:nth-of-type(4) {
+  margin-top: 168px;
+  max-width: 1045px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+main.about-us > div:nth-of-type(4) > h2 {
+  color: #83888f;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+main.about-us > div:nth-of-type(4) > ul {
+  display: flex;
+  gap: 95px;
+  justify-content: baseline;
+  width: 100%;
+  list-style-type: none;
+  padding-inline: 0;
+}
+
+main.about-us > div:nth-of-type(4) > ul > li {
+  max-width: 285px;
+  width: 100%;
+}
+
+main.about-us > div:nth-of-type(4) > ul > li > div {
+  margin-top: 46px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+main.about-us > div:nth-of-type(4) > ul > li > div > h3 {
+  color: #333d4b;
+  font-family: fraunces;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: var(--font-black);
+}
+
+main.about-us > div:nth-of-type(4) > ul > li > div > section {
+  color: #333d4b;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+body:has(main.about-us) > footer {
+  margin-top: 168px;
 }

@@ -23,12 +23,12 @@ def create_your_plan():
     return render_template("create-your-plan/page.html", **context)
 
 
-@app.route("/<page>")
-def content(page):
-    try:
-        return render_template(f"{page}/page.html")
-    except TemplateNotFound:
-        return jsonify({"error": "Page not found"}), 404
+# @app.route("/<page>")
+# def content(page):
+#     try:
+#         return render_template(f"{page}/page.html")
+#     except TemplateNotFound:
+#         return jsonify({"error": "Page not found"}), 404
 
 
 @app.route("/robots.txt")
@@ -94,6 +94,32 @@ def get_context():
             "description": "We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience.",
         },
     ]
+    headquarters = [
+        {
+            "image": "./static/images/about/desktop/illustration-uk.svg",
+            "title": "United Kingdom",
+            "address": "68 Asfordby Rd",
+            "city": "Alcaston",
+            "zipCode": "SY6 1YA",
+            "phone": "+44 1241 918425",
+        },
+        {
+            "image": "./static/images/about/desktop/illustration-canada.svg",
+            "title": "Canada",
+            "address": "1528 Eglinton Avenue",
+            "city": "Toronto",
+            "zipCode": "Ontario M4P 1A6",
+            "phone": "+1 416 485 2997",
+        },
+        {
+            "image": "./static/images/about/desktop/illustration-australia.svg",
+            "title": "Australia",
+            "address": "36 Swanston Street",
+            "city": "Kewell",
+            "zipCode": "Victoria",
+            "phone": "+61 4 9928 3629",
+        },
+    ]
     social = [
         "./components/facebook.html",
         "./components/twitter.html",
@@ -105,6 +131,7 @@ def get_context():
         "whyChooseUs": whyChooseUs,
         "howItWorks": howItWorks,
         "social": social,
+        "headquarters": headquarters,
     }
     return context
 

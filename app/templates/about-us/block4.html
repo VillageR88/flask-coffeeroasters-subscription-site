@@ -1,0 +1,19 @@
+<div>
+  <h2>Our headquarters</h2>
+  <ul>
+    {% for item in headquarters %}
+    <li>
+      <img width="auto" height="auto" src="{{ item.image }}" alt="" />
+      <div>
+        <h3>{{ item.title }}</h3>
+        <section>
+          <p>{{ item.address }}</p>
+          <p>{{ item.city }}</p>
+          <p>{{ item.zipCode }}</p>
+          <p>{{ item.phone }}</p>
+        </section>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
