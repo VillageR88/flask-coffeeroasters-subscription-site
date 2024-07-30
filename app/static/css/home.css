@@ -264,47 +264,12 @@ main.home > div:nth-of-type(4) > div:nth-of-type(1) {
   margin-top: 80px;
 }
 
-main.home > div:nth-of-type(4) > ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
-}
-
-main.home > div:nth-of-type(4) > ul > li {
-  max-width: 285px;
-  width: 100%;
-  margin-top: 67px;
-  display: flex;
-  flex-direction: column;
-}
-
-main.home > div:nth-of-type(4) > ul > li > span {
-  font-family: fraunces;
-  font-size: 72px;
-  font-weight: var(--font-black);
-  color: #fdd6ba;
-  line-height: 72px;
-}
-
-main.home > div:nth-of-type(4) > ul > li > h3 {
-  max-width: 255px;
-  margin-top: 38px;
-  font-family: fraunces;
-  font-size: 32px;
-  font-weight: var(--font-black);
+.ulHowItWorks > li > h3 {
   color: #333d4b;
-  line-height: 36px;
 }
 
-main.home > div:nth-of-type(4) > ul > li > p {
-  margin-top: 42px;
-  font-family: barlow;
-  font-size: 16px;
-  font-weight: 400;
+.ulHowItWorks > li > p {
   color: #333d4b;
-  line-height: 26px;
 }
 
 body:has(main.home) > footer {

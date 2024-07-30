@@ -9,6 +9,55 @@
   --fraunces: "Fraunces", sans-serif;
 }
 
+.ulHowItWorks {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.ulHowItWorks > li {
+  max-width: 285px;
+  width: 100%;
+  margin-top: 67px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ulHowItWorks > li > span {
+  font-family: fraunces;
+  font-size: 72px;
+  font-weight: var(--font-black);
+  color: #fdd6ba;
+  line-height: 72px;
+}
+
+.ulHowItWorks > li > span {
+  font-family: fraunces;
+  font-size: 72px;
+  font-weight: var(--font-black);
+  color: #fdd6ba;
+  line-height: 72px;
+}
+
+.ulHowItWorks > li > h3 {
+  max-width: 255px;
+  margin-top: 38px;
+  font-family: fraunces;
+  font-size: 32px;
+  font-weight: var(--font-black);
+  line-height: 36px;
+}
+
+.ulHowItWorks > li > p {
+  margin-top: 42px;
+  font-family: barlow;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
 a {
   text-decoration: none;
   color: #83888f;

@@ -1,0 +1,9 @@
+<ul class="ulHowItWorks">
+  {% for item in howItWorks %}
+  <li>
+    <span>{{ "%02d" | format(loop.index) }}</span>
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.description }}</p>
+  </li>
+  {% endfor %}
+</ul>

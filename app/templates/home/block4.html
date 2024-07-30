@@ -7,14 +7,7 @@
     <div class="line"></div>
     <div class="circle"></div>
   </div>
-  <ul>
-    {% for item in howItWorks %}
-    <li>
-      <span>{{ "%02d" | format(loop.index) }}</span>
-      <h3>{{ item.title }}</h3>
-      <p>{{ item.description }}</p>
-    </li>
-    {% endfor %}
-  </ul>
+  <!-- prettier-ignore -->
+  {% include './components/ulHowItWorks.html' %} 
   {% include './components/buttonCreatePlan.html' %}
 </div>
