@@ -60,12 +60,6 @@
   background-color: #fdd6ba;
 }
 
-main.home {
-  display: flex;
-  flex-direction: column;
-  padding-top: 43px;
-  align-items: center;
-}
 
 main.home > div:nth-of-type(1) {
   width: 100%;

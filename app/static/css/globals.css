@@ -25,6 +25,7 @@ nav > ul > li > a:hover {
 }
 
 body {
+  background-color: #fefcf7;
   padding-top: 43px;
   margin: auto;
   min-height: 100vh;
@@ -37,10 +38,13 @@ body {
 }
 
 main {
+  padding-top: 43px;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 1280px;
   width: 100%;
-  margin-bottom: auto;
-  flex-direction: column;
 }
 
 nav {
