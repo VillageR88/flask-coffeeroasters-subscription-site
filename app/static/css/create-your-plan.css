@@ -38,3 +38,24 @@ main.create-your-plan > div:nth-of-type(1) > section > p {
   line-height: 26px;
   font-family: barlow;
 }
+
+main.create-your-plan > div:nth-of-type(2) {
+  margin-top: 177px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #2c343e;
+  border-radius: 10px;
+  padding-top: 95px;
+  padding-left: 85px;
+  padding-bottom: 107px;
+  box-sizing: border-box;
+}
+
+main.create-your-plan .ulHowItWorks > li > h3 {
+  color: #fefcf7;
+}
+
+main.create-your-plan .ulHowItWorks > li > p {
+  color: #fefcf7;
+}

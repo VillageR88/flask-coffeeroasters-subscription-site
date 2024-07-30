@@ -1,11 +1,11 @@
-// DOMER - v.0.1.x by VillageR88 (https://github.com/VillageR88)
-
+// experimentalFunction1 - ^0.1.x by VillageR88 (https://github.com/VillageR88)
 /**
- * The `doomer` function sets up dynamic content loading for a single-page application.
- * It intercepts link clicks and uses the Fetch API to load new content without a full page reload.
+ * The experimentalFunction1 implements a basic client-side rendering mechanism for a single-page application.
+ * It intercepts link clicks and uses the Fetch API to load new content dynamically without a full page reload.
+ * This approach enhances the user experience by providing faster navigation and reducing server load.
  * It also handles browser navigation events to maintain the correct state.
  */
-function doomer() {
+function experimentalFunction1() {
     function loadContent(page: string | URL | Request | null | undefined) {
         if (page) {
             fetch(page)
@@ -56,5 +56,5 @@ function doomer() {
         loadContent(window.location.pathname); // Load content based on the initial path
     });
 }
+experimentalFunction1();
 
-doomer();

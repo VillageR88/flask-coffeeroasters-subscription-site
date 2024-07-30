@@ -9,7 +9,13 @@
   --fraunces: "Fraunces", sans-serif;
 }
 
+.circleLine {
+  display: flex;
+  align-items: center;
+}
+
 .ulHowItWorks {
+  max-width: 1045px;
   list-style: none;
   display: flex;
   justify-content: space-between;
