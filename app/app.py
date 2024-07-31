@@ -125,6 +125,13 @@ def get_context():
         "./components/twitter.html",
         "./components/instagram.html",
     ]
+    createPlanNav = [
+        "Preferences",
+        "Bean Type",
+        "Quantity",
+        "Grind Option",
+        "Deliveries",
+    ]
     context = {
         "siteTitle": "Coffeeroasters subscription site",
         "collection": collection,
@@ -132,6 +139,7 @@ def get_context():
         "howItWorks": howItWorks,
         "social": social,
         "headquarters": headquarters,
+        "createPlanNav": createPlanNav,
     }
     return context
 

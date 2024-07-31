@@ -1,0 +1,13 @@
+<div>
+  <ul>
+    {% for item in createPlanNav%}
+    <li>
+      <button>
+        <span>{{ "%02d"|format(loop.index) }}</span>
+        <span>{{ item }}</span>
+      </button>
+    </li>
+    {% endfor %}
+  </ul>
+  <div>2nd</div>
+</div>
