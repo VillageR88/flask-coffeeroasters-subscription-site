@@ -2,7 +2,7 @@
   <ul>
     {% for item in createPlanNav %}
     <li>
-      <label>
+      <label onclick="selectParallelCheckbox({{ loop.index }})">
         <input type="radio" name="plan" value="{{ item }}" />
         <span>{{ "%02d"|format(loop.index) }}</span>
         <span>{{ item }}</span>
@@ -11,5 +11,48 @@
     </li>
     {% endfor %}
   </ul>
-  <div>2nd</div>
+  <ul>
+    {% for item in createPlanBlocks %}
+    <li>
+      <label>
+        <h2>{{ item.title }}</h2>
+        <input
+          disabled
+          class="createPlanBlocksInput"
+          type="radio"
+          name="block"
+          value="{{ item }}"
+        />
+      </label>
+      <ul>
+        {% for subItem in item.options %}
+        <li>
+          <label>
+            <input
+              type="radio"
+              name="{{ item.options }}"
+              value="{{ subItem }}"
+            />
+            <section>
+              <h3>{{ subItem.title }}</h3>
+              <p>{{ subItem.description }}</p>
+            </section>
+          </label>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endfor %}
+    </li>
+    <div>
+      <h3>ORDER SUMMARY</h2>
+      <p id="coffee-description">
+      “I drink my coffee 
+      <span id="preferencesSelected">_____</span>, with a 
+      <span id="beanTypeSelected">_____</span> type of bean. 
+      <span id="quantitySelected">_____</span>, ground ala
+      <span id="grindOptionSelected">_____</span>, sent to me 
+      <span id="deliveriesSelected">_____</span>.”
+      </p>
+    </div>
+  </ul>
 </form>

@@ -59,3 +59,10 @@ function experimentalFunction1() {
     });
 }
 experimentalFunction1();
+function selectParallelCheckbox(loop) {
+    var checkboxes = document.getElementsByClassName('createPlanBlocksInput');
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].removeAttribute('checked');
+    }
+    checkboxes[Number(loop) - 1].setAttribute('checked', 'checked');
+}
