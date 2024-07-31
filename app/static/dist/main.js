@@ -64,5 +64,13 @@ function selectParallelCheckbox(loop) {
     for (var i = 0; i < checkboxes.length; i++) {
         checkboxes[i].removeAttribute('checked');
     }
-    checkboxes[Number(loop) - 1].setAttribute('checked', 'checked');
+    for (var i = 0; i < Number(loop); i++) {
+        checkboxes[i].setAttribute('checked', 'checked');
+    }
+}
+var empty = '_____';
+function checkOrderSummary() {
+    var _a, _b;
+    var buttonCreateMyPlan = document.getElementById('buttonCreateMyPlan');
+    ((_b = (_a = document.getElementById('orderSummary')) === null || _a === void 0 ? void 0 : _a.textContent) === null || _b === void 0 ? void 0 : _b.includes(empty)) ? buttonCreateMyPlan === null || buttonCreateMyPlan === void 0 ? void 0 : buttonCreateMyPlan.setAttribute('disabled', 'true') : buttonCreateMyPlan === null || buttonCreateMyPlan === void 0 ? void 0 : buttonCreateMyPlan.removeAttribute('disabled');
 }

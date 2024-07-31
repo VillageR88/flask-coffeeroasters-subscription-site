@@ -64,5 +64,13 @@ function selectParallelCheckbox(loop: string) {
     for (let i = 0; i < checkboxes.length; i++) {
         checkboxes[i].removeAttribute('checked');
     }
-    checkboxes[Number(loop) - 1].setAttribute('checked', 'checked');
+    for (let i = 0; i < Number(loop); i++) {
+        checkboxes[i].setAttribute('checked', 'checked');
+    }
+}
+
+const empty = '_____';
+function checkOrderSummary() {
+    const buttonCreateMyPlan = document.getElementById('buttonCreateMyPlan') as HTMLButtonElement;
+    document.getElementById('orderSummary')?.textContent?.includes(empty) ? buttonCreateMyPlan?.setAttribute('disabled', 'true') : buttonCreateMyPlan?.removeAttribute('disabled');
 }

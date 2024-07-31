@@ -3,7 +3,7 @@
     {% for item in createPlanNav %}
     <li>
       <label onclick="selectParallelCheckbox({{ loop.index }})">
-        <input type="radio" name="plan" value="{{ item }}" />
+        <input {% if loop.index == 1 %} checked {% endif %} type="radio" name="plan" class="plan" />
         <span>{{ "%02d"|format(loop.index) }}</span>
         <span>{{ item }}</span>
       </label>
@@ -17,21 +17,23 @@
       <label>
         <h2>{{ item.title }}</h2>
         <input
+          {% if loop.index == 1 %} checked {% endif %}
+          name="{{ item.title }}"
           disabled
           class="createPlanBlocksInput"
           type="radio"
-          name="block"
-          value="{{ item }}"
         />
       </label>
       <ul>
+        {% set parent_index = loop.index %}
+        {% set parrent_last = loop.last %}
         {% for subItem in item.options %}
+        
         <li>
-          <label>
-            <input
+        <label onclick="checkOrderSummary(); document.getElementById(`{{ item.title|replace(' ' , '_')|replace('?','') }}`).textContent = '{{ subItem.title }}'">            <input
+              class="inputOption"
               type="radio"
-              name="{{ item.options }}"
-              value="{{ subItem }}"
+              name="{{ item.title|replace(' ' , '_')|replace('?','') }}"
             />
             <section>
               <h3>{{ subItem.title }}</h3>
@@ -43,16 +45,17 @@
       </ul>
       {% endfor %}
     </li>
-    <div>
+    <div id="orderSummary">
       <h3>ORDER SUMMARY</h2>
       <p id="coffee-description">
       “I drink my coffee 
-      <span id="preferencesSelected">_____</span>, with a 
-      <span id="beanTypeSelected">_____</span> type of bean. 
-      <span id="quantitySelected">_____</span>, ground ala
-      <span id="grindOptionSelected">_____</span>, sent to me 
-      <span id="deliveriesSelected">_____</span>.”
+      <span id="How_do_you_drink_your_coffee">_____</span>, with a 
+      <span id="What_type_of_coffee">_____</span> type of bean. 
+      <span id="How_much_would_you_like">_____</span>, ground ala
+      <span id="Want_us_to_grind_them">_____</span>, sent to me 
+      <span id="How_often_should_we_deliver">_____</span>.”
       </p>
     </div>
+    <button type="submit" disabled id="buttonCreateMyPlan">Create my plan!</button>
   </ul>
 </form>

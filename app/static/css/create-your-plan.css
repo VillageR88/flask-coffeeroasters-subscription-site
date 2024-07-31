@@ -197,6 +197,7 @@ main.create-your-plan > form > ul:nth-of-type(2) > li {
 
 main.create-your-plan > form > ul:nth-of-type(2) > li > label {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 24px;
 }
@@ -209,16 +210,31 @@ main.create-your-plan > form > ul:nth-of-type(2) > li > label > h2 {
   line-height: 48px;
 }
 
-main.create-your-plan > form > ul:nth-of-type(2) > li > label:hover {
-  cursor: default;
+main.create-your-plan
+  > form
+  > ul:nth-of-type(2)
+  > li
+  > label
+  > input[type="radio"] {
+  appearance: none;
+  background-image: url("../images/plan/desktop/icon-arrow.svg");
+  background-repeat: no-repeat;
+  width: 19px;
+  height: 13px;
+  transition: transform 0.3s;
 }
 
-main.create-your-plan > form > ul:nth-of-type(2) > li > label > h3 {
-  font-family: fraunces;
-  font-size: 24px;
-  font-weight: var(--font-black);
-  color: #333d4b;
-  line-height: 32px;
+main.create-your-plan
+  > form
+  > ul:nth-of-type(2)
+  > li
+  > label
+  > input[type="radio"]:checked {
+  transform: scaleY(-1);
+}
+
+main.create-your-plan > form > ul:nth-of-type(2) > li > label:hover {
+  cursor: default;
 }
 
 main.create-your-plan > form > ul:nth-of-type(2) > li > ul {
@@ -234,6 +250,14 @@ main.create-your-plan > form > ul:nth-of-type(2) > li > ul > li > label {
   flex-direction: column;
   background-color: #f4f1eb;
   border-radius: 8px;
+}
+
+main.create-your-plan
+  > form
+  > ul:nth-of-type(2)
+  > li:not(:has(input[type="radio"]:checked))
+  > ul {
+  display: none;
 }
 
 main.create-your-plan
@@ -364,6 +388,39 @@ main.create-your-plan
   > p
   > span {
   color: #0e8784;
+}
+
+main.create-your-plan > form > ul:nth-of-type(2) > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: #0e8784;
+  margin-top: -44px;
+  place-self: end;
+  width: 217px;
+  height: 56px;
+  box-sizing: border-box;
+  border: none;
+  color: #fefcf7;
+  font-family: fraunces;
+  font-size: 18px;
+  font-weight: var(--font-black);
+  line-height: 25px;
+  transition: background-color 0.15s;
+}
+
+main.create-your-plan > form > ul:nth-of-type(2) > button:not(:disabled):hover {
+  cursor: pointer;
+  background-color: #66d2cf;
+}
+
+main.create-your-plan > form > ul:nth-of-type(2) > button:disabled:hover {
+  cursor: not-allowed;
+}
+
+main.create-your-plan > form > ul:nth-of-type(2) > button:disabled {
+  background-color: #e2dedb;
 }
 
 body:has(main.create-your-plan) > footer {
