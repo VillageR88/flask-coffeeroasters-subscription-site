@@ -5,12 +5,7 @@
   margin: 0;
 }
 
-.create-your-plan button {
-  background: none;
-  border: none;
-}
-
-.create-your-plan button:hover {
+.create-your-plan label:hover {
   cursor: pointer;
 }
 
@@ -78,7 +73,7 @@ main.create-your-plan .ulHowItWorks > li > p {
   color: #fefcf7;
 }
 
-main.create-your-plan > div:nth-of-type(3) {
+main.create-your-plan > form {
   margin-top: 168px;
   max-width: 1110px;
   width: 100%;
@@ -86,97 +81,96 @@ main.create-your-plan > div:nth-of-type(3) {
   justify-content: space-between;
 }
 
-main.create-your-plan > div:nth-of-type(3) > ul:nth-of-type(1) {
+main.create-your-plan > form > ul:nth-of-type(1) {
   display: flex;
   flex-direction: column;
 }
-main.create-your-plan
-  > div:nth-of-type(3)
-  > ul:nth-of-type(1)
-  > li:nth-of-type(1)
-  > button {
-  display: flex;
-  gap: 28.5px;
+
+input[type="radio"] {
+  display: none;
 }
 
-main.create-your-plan
-  > div:nth-of-type(3)
-  > ul:nth-of-type(1)
-  > li:nth-of-type(2)
-  > button {
+main.create-your-plan > form > ul:nth-of-type(1) > li > label {
   display: flex;
+}
+
+main.create-your-plan > form > ul:nth-of-type(1) > li:nth-of-type(1) > label {
+  gap: 28.5px;
+}
+/* here now */
+main.create-your-plan > form > ul:nth-of-type(1) > li:nth-of-type(2) > label {
   gap: 24.5px;
 }
 
-main.create-your-plan
-  > div:nth-of-type(3)
-  > ul:nth-of-type(1)
-  > li:nth-of-type(3)
-  > button {
-  display: flex;
+main.create-your-plan > form > ul:nth-of-type(1) > li:nth-of-type(3) > label {
   gap: 25.5px;
 }
 
-main.create-your-plan
-  > div:nth-of-type(3)
-  > ul:nth-of-type(1)
-  > li:nth-of-type(4)
-  > button {
-  display: flex;
+main.create-your-plan > form > ul:nth-of-type(1) > li:nth-of-type(4) > label {
   gap: 23.5px;
 }
 
-main.create-your-plan
-  > div:nth-of-type(3)
-  > ul:nth-of-type(1)
-  > li:nth-of-type(5)
-  > button {
-  display: flex;
+main.create-your-plan > form > ul:nth-of-type(1) > li:nth-of-type(5) > label {
   gap: 25.5px;
 }
 
-main.create-your-plan > div:nth-of-type(3) > ul:nth-of-type(1) > li > button {
-  display: flex;
-}
-
-main.create-your-plan > div:nth-of-type(3) > ul:nth-of-type(1) > li > button {
+main.create-your-plan > form > ul:nth-of-type(1) > li > label {
   font-family: fraunces;
   font-size: 24px;
   font-weight: var(--font-black);
 }
 
-main.create-your-plan
-  > div:nth-of-type(3)
-  > ul:nth-of-type(1)
-  > li
-  > button
-  > span {
-    opacity: 0.4;
-  }
+main.create-your-plan > form > ul:nth-of-type(1) > li > label > span {
+  opacity: 0.4;
+}
+
+main.create-your-plan > form > ul:nth-of-type(1) > li > label:hover > span {
+  opacity: 0.6;
+}
 
 main.create-your-plan
-  > div:nth-of-type(3)
+  > form
+  > ul:nth-of-type(1)
+  > li
+  > label
+  > input:checked
+  ~ span {
+  opacity: 1;
+}
+
+main.create-your-plan
+  > form
   > ul:nth-of-type(1)
   > li:nth-of-type(1)
-  > button
+  > label
   > span:nth-of-type(1) {
   color: #0e8784;
 }
 
 main.create-your-plan
-  > div:nth-of-type(3)
+  > form
   > ul:nth-of-type(1)
   > li
-  > button
+  > label
   > span:nth-of-type(1) {
   color: #83888f;
 }
 
 main.create-your-plan
-  > div:nth-of-type(3)
+  > form
   > ul:nth-of-type(1)
   > li
-  > button
+  > label
   > span:nth-of-type(2) {
   color: #333d4b;
+}
+
+main.create-your-plan > form > ul:nth-of-type(1) > li > hr {
+  width: 255px;
+  border: 1px solid #83888f;
+  opacity: 0.25;
+  margin-block: 24px;
+}
+main.create-your-plan > form > ul:nth-of-type(1) > li:last-of-type > hr {
+  display: none;
 }

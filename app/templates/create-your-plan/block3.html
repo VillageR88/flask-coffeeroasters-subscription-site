@@ -1,13 +1,15 @@
-<div>
+<form>
   <ul>
-    {% for item in createPlanNav%}
+    {% for item in createPlanNav %}
     <li>
-      <button>
+      <label>
+        <input type="radio" name="plan" value="{{ item }}" />
         <span>{{ "%02d"|format(loop.index) }}</span>
         <span>{{ item }}</span>
-      </button>
+      </label>
+      <hr />
     </li>
     {% endfor %}
   </ul>
   <div>2nd</div>
-</div>
+</form>
