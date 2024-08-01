@@ -61,11 +61,15 @@ function experimentalFunction1() {
 experimentalFunction1();
 //global variables
 var empty = '_____';
+var createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput');
 function optionCheckboxSelector(loop) {
     var spanIds = ['How_do_you_drink_your_coffee', 'What_type_of_coffee', 'How_much_would_you_like', 'Want_us_to_grind_them', 'How_often_should_we_deliver'];
     var plan = document.getElementsByClassName('plan');
     var inputOption = document.getElementsByClassName('inputOption');
     var checkedPlan = 0;
+    for (var i = plan.length - 1; i > Number(loop) - 1; i--) {
+        (createPlanBlocksInput[i].checked = false);
+    }
     for (var i = 4; i > Number(loop) - 2; i--) {
         var item = document.getElementById(spanIds[i]);
         if (item)
@@ -83,13 +87,11 @@ function optionCheckboxSelector(loop) {
         plan[i].removeAttribute('disabled');
     }
     for (var i = Number(loop) * 3 - 3; i < inputOption.length; i++) {
-        console.log(i);
         inputOption[i].checked = false;
     }
     plan[Number(loop) - 1].checked = true;
 }
 function optionNavSelector(loop) {
-    var createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput');
     var plan = document.getElementsByClassName('plan');
     var checkedPlan = 0;
     for (var i = 0; i < plan.length; i++) {

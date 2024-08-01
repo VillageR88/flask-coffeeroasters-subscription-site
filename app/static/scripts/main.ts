@@ -60,12 +60,16 @@ experimentalFunction1();
 
 //global variables
 const empty = '_____';
+const createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput') as HTMLCollectionOf<HTMLInputElement>;
 
 function optionCheckboxSelector(loop: string) {
     const spanIds = ['How_do_you_drink_your_coffee', 'What_type_of_coffee', 'How_much_would_you_like', 'Want_us_to_grind_them', 'How_often_should_we_deliver'];
     const plan = document.getElementsByClassName('plan') as HTMLCollectionOf<HTMLInputElement>;
     const inputOption = document.getElementsByClassName('inputOption') as HTMLCollectionOf<HTMLInputElement>;
     let checkedPlan = 0;
+    for (let i = plan.length - 1; i > Number(loop) - 1; i--) {
+        (createPlanBlocksInput[i].checked = false);
+    }
     for (let i = 4; i > Number(loop) - 2; i--) {
         const item = document.getElementById(spanIds[i]);
         if (item) item.textContent = empty;
@@ -79,16 +83,15 @@ function optionCheckboxSelector(loop: string) {
     }
     for (let i = 0; i < Number(loop) - 1; i++) {
         plan[i].removeAttribute('disabled');
+
     }
     for (let i = Number(loop) * 3 - 3; i < inputOption.length; i++) {
-        console.log(i);
         inputOption[i].checked = false;
     }
     plan[Number(loop) - 1].checked = true;
 }
 
 function optionNavSelector(loop: string) {
-    const createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput') as HTMLCollectionOf<HTMLInputElement>;
     const plan = document.getElementsByClassName('plan') as HTMLCollectionOf<HTMLInputElement>;
     let checkedPlan = 0;
     for (let i = 0; i < plan.length; i++) {
