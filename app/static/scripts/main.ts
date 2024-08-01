@@ -41,6 +41,7 @@ function experimentalFunction1() {
         const links = Array.from(document.querySelectorAll("a"));
         for (const link of links) {
             link.addEventListener("click", (event: MouseEvent) => {
+                window.scrollTo(0, 0); // optional
                 event.preventDefault();
                 const target = event.target as HTMLElement;
                 const page = target.closest("a")?.getAttribute("href");

@@ -44,6 +44,7 @@ function experimentalFunction1() {
             var link = links_1[_i];
             link.addEventListener("click", function (event) {
                 var _a;
+                window.scrollTo(0, 0); // optional
                 event.preventDefault();
                 var target = event.target;
                 var page = (_a = target.closest("a")) === null || _a === void 0 ? void 0 : _a.getAttribute("href");
