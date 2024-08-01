@@ -58,7 +58,7 @@ function experimentalFunction1() {
 }
 experimentalFunction1();
 
-function selectParallelCheckbox(loop: string) {
+function optionCheckboxSelector(loop: string) {
     const plan = document.getElementsByClassName('plan') as HTMLCollectionOf<HTMLInputElement>;
     let checkedPlan = 0;
     for (let i = 0; i < plan.length; i++) {

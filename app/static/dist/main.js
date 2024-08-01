@@ -59,7 +59,7 @@ function experimentalFunction1() {
     });
 }
 experimentalFunction1();
-function selectParallelCheckbox(loop) {
+function optionCheckboxSelector(loop) {
     var plan = document.getElementsByClassName('plan');
     var checkedPlan = 0;
     for (var i = 0; i < plan.length; i++) {

@@ -3,7 +3,7 @@
     {% for item in createPlanNav %}
     <li>
       <label >
-        <input onclick="selectParallelCheckbox({{ loop.index }})" disabled {% if loop.index==1 %} checked {% endif %} type="radio" name="plan" class="plan" />
+        <input onclick="optionCheckboxSelector({{ loop.index }})" disabled {% if loop.index==1 %} checked {% endif %} type="radio" name="plan" class="plan" />
         <span>{{ "%02d"|format(loop.index) }}</span>
         <span>{{ item }}</span>
       </label>
