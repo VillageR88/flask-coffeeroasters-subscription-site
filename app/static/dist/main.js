@@ -61,33 +61,39 @@ function experimentalFunction1() {
 }
 experimentalFunction1();
 //global variables
-var empty = '_____';
-var spanIDrinkMyCoffee = '“I drink my coffee';
-var spanEmpty = '';
+var empty = "_____";
+var spanIDrinkMyCoffee = "“I drink my coffee";
+var spanEmpty = "";
 function optionCheckboxSelector(loop) {
-    var wantUsToGrindThem = document.getElementById('Want_us_to_grind_themLabel');
-    var grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
-    var createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput');
-    var preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
+    var wantUsToGrindThem = document.getElementById("Want_us_to_grind_themLabel");
+    var grindOptionPrefix = document.getElementById("Want_us_to_grind_themPrefix");
+    var createPlanBlocksInput = document.getElementsByClassName("createPlanBlocksInput");
+    var preferencesPrefix = document.getElementById("How_do_you_drink_your_coffeePrefix");
     if (Number(loop) - 1 === 0) {
         if (preferencesPrefix)
             preferencesPrefix.textContent = spanIDrinkMyCoffee;
         if (grindOptionPrefix)
             grindOptionPrefix.textContent = spanEmpty;
-        wantUsToGrindThem === null || wantUsToGrindThem === void 0 ? void 0 : wantUsToGrindThem.classList.remove('cloaked');
+        wantUsToGrindThem === null || wantUsToGrindThem === void 0 ? void 0 : wantUsToGrindThem.classList.remove("cloaked");
     }
-    var spanIds = ['How_do_you_drink_your_coffee', 'What_type_of_coffee', 'How_much_would_you_like', 'Want_us_to_grind_them', 'How_often_should_we_deliver'];
-    var plan = document.getElementsByClassName('plan');
-    var inputOption = document.getElementsByClassName('inputOption');
+    var spanIds = [
+        "How_do_you_drink_your_coffee",
+        "What_type_of_coffee",
+        "How_much_would_you_like",
+        "Want_us_to_grind_them",
+        "How_often_should_we_deliver",
+    ];
+    var plan = document.getElementsByClassName("plan");
+    var inputOption = document.getElementsByClassName("inputOption");
     var checkedPlan = 0;
     for (var i = plan.length - 1; i > Number(loop) - 1; i--) {
-        (createPlanBlocksInput[i].checked = false);
+        createPlanBlocksInput[i].checked = false;
     }
     for (var i = 4; i > Number(loop) - 2; i--) {
         var item = document.getElementById(spanIds[i]);
         if (item) {
-            if (item.id === 'Want_us_to_grind_them') {
-                item.textContent = '';
+            if (item.id === "Want_us_to_grind_them") {
+                item.textContent = "";
             }
             else {
                 item.textContent = empty;
@@ -100,10 +106,10 @@ function optionCheckboxSelector(loop) {
     }
     for (var i = 0; i < plan.length; i++) {
         plan[i].checked = false;
-        plan[i].setAttribute('disabled', 'true');
+        plan[i].setAttribute("disabled", "true");
     }
     for (var i = 0; i < Number(loop) - 1; i++) {
-        plan[i].removeAttribute('disabled');
+        plan[i].removeAttribute("disabled");
     }
     for (var i = Number(loop) * 3 - 3; i < inputOption.length; i++) {
         inputOption[i].checked = false;
@@ -111,9 +117,9 @@ function optionCheckboxSelector(loop) {
     plan[Number(loop) - 1].checked = true;
 }
 function optionNavSelector(loop) {
-    var createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput');
-    var preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
-    var plan = document.getElementsByClassName('plan');
+    var createPlanBlocksInput = document.getElementsByClassName("createPlanBlocksInput");
+    var preferencesPrefix = document.getElementById("How_do_you_drink_your_coffeePrefix");
+    var plan = document.getElementsByClassName("plan");
     var checkedPlan = 0;
     for (var i = 0; i < plan.length; i++) {
         if (plan[i].checked === true)
@@ -122,10 +128,10 @@ function optionNavSelector(loop) {
     if (Number(loop) >= checkedPlan) {
         for (var i = 0; i < plan.length; i++) {
             plan[i].checked = false;
-            plan[i].setAttribute('disabled', 'true');
+            plan[i].setAttribute("disabled", "true");
         }
         for (var i = 0; i <= Number(loop); i++) {
-            plan[i].removeAttribute('disabled');
+            plan[i].removeAttribute("disabled");
         }
         if (Number(loop) + 1 <= plan.length - 1) {
             plan[Number(loop) + 1].checked = true;
@@ -135,20 +141,25 @@ function optionNavSelector(loop) {
             plan[Number(loop)].checked = true;
         }
     }
-    var spanGroundAla = ', ground ala';
-    var preferences = document.getElementById('How_do_you_drink_your_coffee');
-    var grindOption = document.getElementById('Want_us_to_grind_them');
-    var grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
-    var wantUsToGrindThem = document.getElementById('Want_us_to_grind_themLabel');
-    if (preferencesPrefix && grindOption && preferences && grindOptionPrefix && Number(loop) === 0)
-        if (preferences.textContent === 'Capsule') {
+    var spanGroundAla = ", ground ala";
+    var preferences = document.getElementById("How_do_you_drink_your_coffee");
+    var grindOption = document.getElementById("Want_us_to_grind_them");
+    var grindOptionPrefix = document.getElementById("Want_us_to_grind_themPrefix");
+    var wantUsToGrindThem = document.getElementById("Want_us_to_grind_themLabel");
+    if (preferencesPrefix &&
+        grindOption &&
+        preferences &&
+        grindOptionPrefix &&
+        Number(loop) === 0)
+        if (preferences.textContent === "Capsule") {
             grindOption.textContent = spanEmpty;
             grindOptionPrefix.textContent = spanEmpty;
             preferencesPrefix.textContent = "".concat(spanIDrinkMyCoffee, " as");
-            wantUsToGrindThem === null || wantUsToGrindThem === void 0 ? void 0 : wantUsToGrindThem.classList.add('cloaked');
+            wantUsToGrindThem === null || wantUsToGrindThem === void 0 ? void 0 : wantUsToGrindThem.classList.add("cloaked");
         }
-        else if (preferences.textContent === 'Filter' || preferences.textContent === 'Espresso') {
-            wantUsToGrindThem === null || wantUsToGrindThem === void 0 ? void 0 : wantUsToGrindThem.classList.remove('cloaked');
+        else if (preferences.textContent === "Filter" ||
+            preferences.textContent === "Espresso") {
+            wantUsToGrindThem === null || wantUsToGrindThem === void 0 ? void 0 : wantUsToGrindThem.classList.remove("cloaked");
             preferencesPrefix.textContent = "".concat(spanIDrinkMyCoffee, " with");
             grindOptionPrefix.textContent = spanGroundAla;
             if (grindOption.textContent === spanEmpty)
@@ -157,16 +168,11 @@ function optionNavSelector(loop) {
         else {
             preferencesPrefix.textContent = spanIDrinkMyCoffee;
         }
-    ;
 }
 function checkOrderSummary() {
     var _a, _b;
-    var buttonCreateMyPlan = document.getElementById('buttonCreateMyPlan');
-    ((_b = (_a = document.getElementById('orderSummary')) === null || _a === void 0 ? void 0 : _a.textContent) === null || _b === void 0 ? void 0 : _b.includes(empty)) ? buttonCreateMyPlan === null || buttonCreateMyPlan === void 0 ? void 0 : buttonCreateMyPlan.setAttribute('disabled', 'true') : buttonCreateMyPlan === null || buttonCreateMyPlan === void 0 ? void 0 : buttonCreateMyPlan.removeAttribute('disabled');
+    var buttonCreateMyPlan = document.getElementById("buttonCreateMyPlan");
+    ((_b = (_a = document.getElementById("orderSummary")) === null || _a === void 0 ? void 0 : _a.textContent) === null || _b === void 0 ? void 0 : _b.includes(empty))
+        ? buttonCreateMyPlan === null || buttonCreateMyPlan === void 0 ? void 0 : buttonCreateMyPlan.setAttribute("disabled", "true")
+        : buttonCreateMyPlan === null || buttonCreateMyPlan === void 0 ? void 0 : buttonCreateMyPlan.removeAttribute("disabled");
 }
-// <span id="How_do_you_drink_your_coffee">_____</span>, with a
-// <span id="What_type_of_coffee">_____</span> type of bean.
-// <span id="How_much_would_you_like">_____</span>, ground ala
-// <span id="Want_us_to_grind_them">_____</span>, sent to me
-// <span id="How_often_should_we_deliver">_____</span>.”
-//we gonna also create array of all span ids

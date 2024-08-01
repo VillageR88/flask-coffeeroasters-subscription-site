@@ -60,33 +60,50 @@ function experimentalFunction1() {
 experimentalFunction1();
 
 //global variables
-const empty = '_____';
-const spanIDrinkMyCoffee = '“I drink my coffee';
-const spanEmpty = '';
+const empty = "_____";
+const spanIDrinkMyCoffee = "“I drink my coffee";
+const spanEmpty = "";
 
 function optionCheckboxSelector(loop: string) {
-    const wantUsToGrindThem = document.getElementById('Want_us_to_grind_themLabel');
-    const grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
-    const createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput') as HTMLCollectionOf<HTMLInputElement>;
-    const preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
+    const wantUsToGrindThem = document.getElementById(
+        "Want_us_to_grind_themLabel",
+    );
+    const grindOptionPrefix = document.getElementById(
+        "Want_us_to_grind_themPrefix",
+    );
+    const createPlanBlocksInput = document.getElementsByClassName(
+        "createPlanBlocksInput",
+    ) as HTMLCollectionOf<HTMLInputElement>;
+    const preferencesPrefix = document.getElementById(
+        "How_do_you_drink_your_coffeePrefix",
+    );
     if (Number(loop) - 1 === 0) {
         if (preferencesPrefix) preferencesPrefix.textContent = spanIDrinkMyCoffee;
         if (grindOptionPrefix) grindOptionPrefix.textContent = spanEmpty;
-        wantUsToGrindThem?.classList.remove('cloaked');
+        wantUsToGrindThem?.classList.remove("cloaked");
     }
-    const spanIds = ['How_do_you_drink_your_coffee', 'What_type_of_coffee', 'How_much_would_you_like', 'Want_us_to_grind_them', 'How_often_should_we_deliver'];
-    const plan = document.getElementsByClassName('plan') as HTMLCollectionOf<HTMLInputElement>;
-    const inputOption = document.getElementsByClassName('inputOption') as HTMLCollectionOf<HTMLInputElement>;
+    const spanIds = [
+        "How_do_you_drink_your_coffee",
+        "What_type_of_coffee",
+        "How_much_would_you_like",
+        "Want_us_to_grind_them",
+        "How_often_should_we_deliver",
+    ];
+    const plan = document.getElementsByClassName(
+        "plan",
+    ) as HTMLCollectionOf<HTMLInputElement>;
+    const inputOption = document.getElementsByClassName(
+        "inputOption",
+    ) as HTMLCollectionOf<HTMLInputElement>;
     let checkedPlan = 0;
     for (let i = plan.length - 1; i > Number(loop) - 1; i--) {
-        (createPlanBlocksInput[i].checked = false);
+        createPlanBlocksInput[i].checked = false;
     }
     for (let i = 4; i > Number(loop) - 2; i--) {
-
         const item = document.getElementById(spanIds[i]);
         if (item) {
-            if (item.id === 'Want_us_to_grind_them') {
-                item.textContent = '';
+            if (item.id === "Want_us_to_grind_them") {
+                item.textContent = "";
             } else {
                 item.textContent = empty;
             }
@@ -97,11 +114,10 @@ function optionCheckboxSelector(loop: string) {
     }
     for (let i = 0; i < plan.length; i++) {
         plan[i].checked = false;
-        plan[i].setAttribute('disabled', 'true');
+        plan[i].setAttribute("disabled", "true");
     }
     for (let i = 0; i < Number(loop) - 1; i++) {
-        plan[i].removeAttribute('disabled');
-
+        plan[i].removeAttribute("disabled");
     }
     for (let i = Number(loop) * 3 - 3; i < inputOption.length; i++) {
         inputOption[i].checked = false;
@@ -110,9 +126,15 @@ function optionCheckboxSelector(loop: string) {
 }
 
 function optionNavSelector(loop: string) {
-    const createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput') as HTMLCollectionOf<HTMLInputElement>;
-    const preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
-    const plan = document.getElementsByClassName('plan') as HTMLCollectionOf<HTMLInputElement>;
+    const createPlanBlocksInput = document.getElementsByClassName(
+        "createPlanBlocksInput",
+    ) as HTMLCollectionOf<HTMLInputElement>;
+    const preferencesPrefix = document.getElementById(
+        "How_do_you_drink_your_coffeePrefix",
+    );
+    const plan = document.getElementsByClassName(
+        "plan",
+    ) as HTMLCollectionOf<HTMLInputElement>;
     let checkedPlan = 0;
     for (let i = 0; i < plan.length; i++) {
         if (plan[i].checked === true) checkedPlan = i;
@@ -120,53 +142,59 @@ function optionNavSelector(loop: string) {
     if (Number(loop) >= checkedPlan) {
         for (let i = 0; i < plan.length; i++) {
             plan[i].checked = false;
-            plan[i].setAttribute('disabled', 'true');
+            plan[i].setAttribute("disabled", "true");
         }
         for (let i = 0; i <= Number(loop); i++) {
-            plan[i].removeAttribute('disabled');
+            plan[i].removeAttribute("disabled");
         }
 
         if (Number(loop) + 1 <= plan.length - 1) {
             plan[Number(loop) + 1].checked = true;
             createPlanBlocksInput[Number(loop) + 1].checked = true;
-        }
-        else {
+        } else {
             plan[Number(loop)].checked = true;
         }
     }
-    const spanGroundAla = ', ground ala';
-    const preferences = document.getElementById('How_do_you_drink_your_coffee');
-    const grindOption = document.getElementById('Want_us_to_grind_them');
-    const grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
-    const wantUsToGrindThem = document.getElementById('Want_us_to_grind_themLabel');
-    if (preferencesPrefix && grindOption && preferences && grindOptionPrefix && Number(loop) === 0)
-        if (preferences.textContent === 'Capsule') {
+    const spanGroundAla = ", ground ala";
+    const preferences = document.getElementById("How_do_you_drink_your_coffee");
+    const grindOption = document.getElementById("Want_us_to_grind_them");
+    const grindOptionPrefix = document.getElementById(
+        "Want_us_to_grind_themPrefix",
+    );
+    const wantUsToGrindThem = document.getElementById(
+        "Want_us_to_grind_themLabel",
+    );
+    if (
+        preferencesPrefix &&
+        grindOption &&
+        preferences &&
+        grindOptionPrefix &&
+        Number(loop) === 0
+    )
+        if (preferences.textContent === "Capsule") {
             grindOption.textContent = spanEmpty;
             grindOptionPrefix.textContent = spanEmpty;
             preferencesPrefix.textContent = `${spanIDrinkMyCoffee} as`;
-            wantUsToGrindThem?.classList.add('cloaked');
-
-        }
-        else if (preferences.textContent === 'Filter' || preferences.textContent === 'Espresso') {
-            wantUsToGrindThem?.classList.remove('cloaked');
-            preferencesPrefix.textContent = `${spanIDrinkMyCoffee} with`
+            wantUsToGrindThem?.classList.add("cloaked");
+        } else if (
+            preferences.textContent === "Filter" ||
+            preferences.textContent === "Espresso"
+        ) {
+            wantUsToGrindThem?.classList.remove("cloaked");
+            preferencesPrefix.textContent = `${spanIDrinkMyCoffee} with`;
             grindOptionPrefix.textContent = spanGroundAla;
-            if (grindOption.textContent === spanEmpty) grindOption.textContent = empty;
-        }
-        else {
+            if (grindOption.textContent === spanEmpty)
+                grindOption.textContent = empty;
+        } else {
             preferencesPrefix.textContent = spanIDrinkMyCoffee;
-        };
+        }
 }
 
 function checkOrderSummary() {
-    const buttonCreateMyPlan = document.getElementById('buttonCreateMyPlan') as HTMLButtonElement;
-    document.getElementById('orderSummary')?.textContent?.includes(empty) ? buttonCreateMyPlan?.setAttribute('disabled', 'true') : buttonCreateMyPlan?.removeAttribute('disabled');
+    const buttonCreateMyPlan = document.getElementById(
+        "buttonCreateMyPlan",
+    ) as HTMLButtonElement;
+    document.getElementById("orderSummary")?.textContent?.includes(empty)
+        ? buttonCreateMyPlan?.setAttribute("disabled", "true")
+        : buttonCreateMyPlan?.removeAttribute("disabled");
 }
-
-// <span id="How_do_you_drink_your_coffee">_____</span>, with a
-// <span id="What_type_of_coffee">_____</span> type of bean.
-// <span id="How_much_would_you_like">_____</span>, ground ala
-// <span id="Want_us_to_grind_them">_____</span>, sent to me
-// <span id="How_often_should_we_deliver">_____</span>.”
-//we gonna also create array of all span ids
-
