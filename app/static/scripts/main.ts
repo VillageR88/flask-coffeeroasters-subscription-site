@@ -147,8 +147,10 @@ function optionNavSelector(loop: string) {
         for (let i = 0; i <= Number(loop); i++) {
             plan[i].removeAttribute("disabled");
         }
-
-        if (Number(loop) + 1 <= plan.length - 1) {
+        if (Number(loop) === 2 && document.querySelector('main.create-your-plan .cloaked')) {
+            plan[Number(loop) + 2].checked = true;
+            createPlanBlocksInput[Number(loop) + 1].checked = true;
+        } else if (Number(loop) + 1 <= plan.length - 1) {
             plan[Number(loop) + 1].checked = true;
             createPlanBlocksInput[Number(loop) + 1].checked = true;
         } else {
