@@ -90,10 +90,12 @@ function optionNavSelector(loop: string) {
             plan[i].removeAttribute('disabled');
         }
 
-        if (Number(loop) <= plan.length - 1) {
+        if (Number(loop) + 1 <= plan.length - 1) {
+            plan[Number(loop) + 1].checked = true;
+        }
+        else {
             plan[Number(loop)].checked = true;
         }
-
     }
 }
 
