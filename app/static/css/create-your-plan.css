@@ -148,12 +148,29 @@ main.create-your-plan
   > form
   > ul:nth-of-type(1)
   > li
+  > label:has(input[type="radio"]:disabled)
+  > span {
+  opacity: 0.2;
+}
+main.create-your-plan
+  > form
+  > ul:nth-of-type(1)
+  > li
+  > label:has(input[type="radio"]:checked)
+  > span {
+  opacity: 1;
+}
+
+main.create-your-plan
+  > form
+  > ul:nth-of-type(1)
+  > li
   > label:not(:has(input[type="radio"]:disabled)):hover
   > span {
   opacity: 0.6;
 }
 
-main.create-your-plan
+/* main.create-your-plan //Probably obsolete
   > form
   > ul:nth-of-type(1)
   > li
@@ -161,7 +178,7 @@ main.create-your-plan
   > input:checked
   ~ span {
   opacity: 1;
-}
+} */
 
 main.create-your-plan
   > form
@@ -489,4 +506,9 @@ main.create-your-plan > form > ul:nth-of-type(2) > button:disabled {
 
 body:has(main.create-your-plan) > footer {
   margin-top: 168px;
+}
+
+/* custom classes */
+.cloaked {
+  opacity: 0.5;
 }

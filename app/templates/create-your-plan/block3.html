@@ -14,7 +14,7 @@
   <ul>
     {% for item in createPlanBlocks %}
     <li>
-      <label>
+      <label id="{{ item.title|replace(' ' , '_')|replace('?','') }}Label">
         <h2>{{ item.title }}</h2>
         <input {% if loop.index==1 %} checked {% endif %} name="{{ item.title }}" disabled class="createPlanBlocksInput"
           type="radio" />

@@ -65,12 +65,14 @@ const spanIDrinkMyCoffee = '“I drink my coffee';
 const spanEmpty = '';
 
 function optionCheckboxSelector(loop: string) {
+    const wantUsToGrindThem = document.getElementById('Want_us_to_grind_themLabel');
     const grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
     const createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput') as HTMLCollectionOf<HTMLInputElement>;
     const preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
     if (Number(loop) - 1 === 0) {
         if (preferencesPrefix) preferencesPrefix.textContent = spanIDrinkMyCoffee;
         if (grindOptionPrefix) grindOptionPrefix.textContent = spanEmpty;
+        wantUsToGrindThem?.classList.remove('cloaked');
     }
     const spanIds = ['How_do_you_drink_your_coffee', 'What_type_of_coffee', 'How_much_would_you_like', 'Want_us_to_grind_them', 'How_often_should_we_deliver'];
     const plan = document.getElementsByClassName('plan') as HTMLCollectionOf<HTMLInputElement>;
@@ -136,13 +138,17 @@ function optionNavSelector(loop: string) {
     const preferences = document.getElementById('How_do_you_drink_your_coffee');
     const grindOption = document.getElementById('Want_us_to_grind_them');
     const grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
+    const wantUsToGrindThem = document.getElementById('Want_us_to_grind_themLabel');
     if (preferencesPrefix && grindOption && preferences && grindOptionPrefix && Number(loop) === 0)
         if (preferences.textContent === 'Capsule') {
             grindOption.textContent = spanEmpty;
             grindOptionPrefix.textContent = spanEmpty;
             preferencesPrefix.textContent = `${spanIDrinkMyCoffee} as`;
+            wantUsToGrindThem?.classList.add('cloaked');
+
         }
         else if (preferences.textContent === 'Filter' || preferences.textContent === 'Espresso') {
+            wantUsToGrindThem?.classList.remove('cloaked');
             preferencesPrefix.textContent = `${spanIDrinkMyCoffee} with`
             grindOptionPrefix.textContent = spanGroundAla;
             if (grindOption.textContent === spanEmpty) grindOption.textContent = empty;
@@ -151,7 +157,6 @@ function optionNavSelector(loop: string) {
             preferencesPrefix.textContent = spanIDrinkMyCoffee;
         };
 }
-
 
 function checkOrderSummary() {
     const buttonCreateMyPlan = document.getElementById('buttonCreateMyPlan') as HTMLButtonElement;

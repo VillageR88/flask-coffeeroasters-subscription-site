@@ -65,6 +65,7 @@ var empty = '_____';
 var spanIDrinkMyCoffee = '“I drink my coffee';
 var spanEmpty = '';
 function optionCheckboxSelector(loop) {
+    var wantUsToGrindThem = document.getElementById('Want_us_to_grind_themLabel');
     var grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
     var createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput');
     var preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
@@ -73,6 +74,7 @@ function optionCheckboxSelector(loop) {
             preferencesPrefix.textContent = spanIDrinkMyCoffee;
         if (grindOptionPrefix)
             grindOptionPrefix.textContent = spanEmpty;
+        wantUsToGrindThem === null || wantUsToGrindThem === void 0 ? void 0 : wantUsToGrindThem.classList.remove('cloaked');
     }
     var spanIds = ['How_do_you_drink_your_coffee', 'What_type_of_coffee', 'How_much_would_you_like', 'Want_us_to_grind_them', 'How_often_should_we_deliver'];
     var plan = document.getElementsByClassName('plan');
@@ -137,13 +139,16 @@ function optionNavSelector(loop) {
     var preferences = document.getElementById('How_do_you_drink_your_coffee');
     var grindOption = document.getElementById('Want_us_to_grind_them');
     var grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
+    var wantUsToGrindThem = document.getElementById('Want_us_to_grind_themLabel');
     if (preferencesPrefix && grindOption && preferences && grindOptionPrefix && Number(loop) === 0)
         if (preferences.textContent === 'Capsule') {
             grindOption.textContent = spanEmpty;
             grindOptionPrefix.textContent = spanEmpty;
             preferencesPrefix.textContent = "".concat(spanIDrinkMyCoffee, " as");
+            wantUsToGrindThem === null || wantUsToGrindThem === void 0 ? void 0 : wantUsToGrindThem.classList.add('cloaked');
         }
         else if (preferences.textContent === 'Filter' || preferences.textContent === 'Espresso') {
+            wantUsToGrindThem === null || wantUsToGrindThem === void 0 ? void 0 : wantUsToGrindThem.classList.remove('cloaked');
             preferencesPrefix.textContent = "".concat(spanIDrinkMyCoffee, " with");
             grindOptionPrefix.textContent = spanGroundAla;
             if (grindOption.textContent === spanEmpty)
