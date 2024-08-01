@@ -66,7 +66,6 @@ function optionCheckboxSelector(loop: string) {
     const plan = document.getElementsByClassName('plan') as HTMLCollectionOf<HTMLInputElement>;
     const inputOption = document.getElementsByClassName('inputOption') as HTMLCollectionOf<HTMLInputElement>;
     let checkedPlan = 0;
-    //we gonna remove (set to var empty '_____') by id spanIds all above loop number
     for (let i = 4; i > Number(loop) - 2; i--) {
         const item = document.getElementById(spanIds[i]);
         if (item) item.textContent = empty;
@@ -74,7 +73,6 @@ function optionCheckboxSelector(loop: string) {
     for (let i = 0; i < plan.length; i++) {
         if (plan[i].checked === true) checkedPlan = i;
     }
-    console.log(checkedPlan);
     for (let i = 0; i < plan.length; i++) {
         plan[i].checked = false;
         plan[i].setAttribute('disabled', 'true');
@@ -86,13 +84,11 @@ function optionCheckboxSelector(loop: string) {
         console.log(i);
         inputOption[i].checked = false;
     }
-
-
-
     plan[Number(loop) - 1].checked = true;
 }
 
 function optionNavSelector(loop: string) {
+    const createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput') as HTMLCollectionOf<HTMLInputElement>;
     const plan = document.getElementsByClassName('plan') as HTMLCollectionOf<HTMLInputElement>;
     let checkedPlan = 0;
     for (let i = 0; i < plan.length; i++) {
@@ -109,6 +105,7 @@ function optionNavSelector(loop: string) {
 
         if (Number(loop) + 1 <= plan.length - 1) {
             plan[Number(loop) + 1].checked = true;
+            createPlanBlocksInput[Number(loop) + 1].checked = true;
         }
         else {
             plan[Number(loop)].checked = true;
