@@ -321,12 +321,31 @@ main.create-your-plan
   display: grid;
 }
 
-main.create-your-plan
+main.create-your-plan:not(:has(.cloaked))
   > form
   > ul:nth-of-type(2):has(
     li:nth-of-type(3) > ul > li input[type="radio"]:checked
   )
   > li:nth-of-type(4)
+  > ul {
+  display: grid;
+}
+
+main.create-your-plan:has(.cloaked)
+  > form
+  > ul:nth-of-type(2):has(
+    li:nth-of-type(3) > ul > li input[type="radio"]:checked
+  )
+  > li:nth-of-type(4)
+  > ul {
+  display: none;
+}
+main.create-your-plan:has(.cloaked)
+  > form
+  > ul:nth-of-type(2):has(
+    li:nth-of-type(3) > ul > li input[type="radio"]:checked
+  )
+  > li:nth-of-type(5)
   > ul {
   display: grid;
 }
