@@ -2,8 +2,8 @@
   <ul>
     {% for item in createPlanNav %}
     <li>
-      <label onclick="selectParallelCheckbox({{ loop.index }})">
-        <input {% if loop.index == 1 %} checked {% endif %} type="radio" name="plan" class="plan" />
+      <label >
+        <input onclick="selectParallelCheckbox({{ loop.index }})" disabled {% if loop.index==1 %} checked {% endif %} type="radio" name="plan" class="plan" />
         <span>{{ "%02d"|format(loop.index) }}</span>
         <span>{{ item }}</span>
       </label>
@@ -16,26 +16,17 @@
     <li>
       <label>
         <h2>{{ item.title }}</h2>
-        <input
-          {% if loop.index == 1 %} checked {% endif %}
-          name="{{ item.title }}"
-          disabled
-          class="createPlanBlocksInput"
-          type="radio"
-        />
+        <input {% if loop.index==1 %} checked {% endif %} name="{{ item.title }}" disabled class="createPlanBlocksInput"
+          type="radio" />
       </label>
       <ul>
         {% set parent_index = loop.index %}
         {% set parrent_last = loop.last %}
         {% for subItem in item.options %}
-        
         <li>
-        <label onclick="checkOrderSummary(); document.getElementById(`{{ item.title|replace(' ' , '_')|replace('?','') }}`).textContent = '{{ subItem.title }}'">
-        <input
-              class="inputOption"
-              type="radio"
-              name="{{ item.title|replace(' ' , '_')|replace('?','') }}"
-            />
+          <label 
+            onclick="checkOrderSummary(); optionNavSelector({{ parent_index - 1 }}); document.getElementById(`{{ item.title|replace(' ' , '_')|replace('?','') }}`).textContent = '{{ subItem.title }}'">
+            <input  class="inputOption" type="radio" name="{{ item.title|replace(' ' , '_')|replace('?','') }}" />
             <section>
               <h3>{{ subItem.title }}</h3>
               <p>{{ subItem.description }}</p>
@@ -48,14 +39,14 @@
     </li>
     <div id="orderSummary">
       <h3>ORDER SUMMARY</h2>
-      <p id="coffee-description">
-      “I drink my coffee 
-      <span id="How_do_you_drink_your_coffee">_____</span>, with a 
-      <span id="What_type_of_coffee">_____</span> type of bean. 
-      <span id="How_much_would_you_like">_____</span>, ground ala
-      <span id="Want_us_to_grind_them">_____</span>, sent to me 
-      <span id="How_often_should_we_deliver">_____</span>.”
-      </p>
+        <p id="coffee-description">
+          “I drink my coffee
+          <span id="How_do_you_drink_your_coffee">_____</span>, with a
+          <span id="What_type_of_coffee">_____</span> type of bean.
+          <span id="How_much_would_you_like">_____</span>, ground ala
+          <span id="Want_us_to_grind_them">_____</span>, sent to me
+          <span id="How_often_should_we_deliver">_____</span>.”
+        </p>
     </div>
     <button type="submit" disabled id="buttonCreateMyPlan">Create my plan!</button>
   </ul>

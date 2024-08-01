@@ -58,19 +58,47 @@ function experimentalFunction1() {
 }
 experimentalFunction1();
 
-
 function selectParallelCheckbox(loop: string) {
-    const checkboxes = document.getElementsByClassName('createPlanBlocksInput');
-    for (let i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].removeAttribute('checked');
+    const plan = document.getElementsByClassName('plan') as HTMLCollectionOf<HTMLInputElement>;
+    let checkedPlan = 0;
+    for (let i = 0; i < plan.length; i++) {
+        if (plan[i].checked === true) checkedPlan = i;
     }
-    for (let i = 0; i < Number(loop); i++) {
-        checkboxes[i].setAttribute('checked', 'checked');
+    console.log(checkedPlan);
+    for (let i = 0; i < plan.length; i++) {
+        plan[i].checked = false;
+        plan[i].setAttribute('disabled', 'true');
+    }
+    for (let i = 0; i < Number(loop) - 1; i++) {
+        plan[i].removeAttribute('disabled');
+    }
+    plan[Number(loop) - 1].checked = true;
+}
+
+function optionNavSelector(loop: string) {
+    const plan = document.getElementsByClassName('plan') as HTMLCollectionOf<HTMLInputElement>;
+    let checkedPlan = 0;
+    for (let i = 0; i < plan.length; i++) {
+        if (plan[i].checked === true) checkedPlan = i;
+    }
+    if (Number(loop) >= checkedPlan) {
+        for (let i = 0; i < plan.length; i++) {
+            plan[i].checked = false;
+            plan[i].setAttribute('disabled', 'true');
+        }
+        for (let i = 0; i <= Number(loop); i++) {
+            plan[i].removeAttribute('disabled');
+        }
+
+        if (Number(loop) <= plan.length - 1) {
+            plan[Number(loop)].checked = true;
+        }
+
     }
 }
 
-const empty = '_____';
 function checkOrderSummary() {
+    const empty = '_____';
     const buttonCreateMyPlan = document.getElementById('buttonCreateMyPlan') as HTMLButtonElement;
     document.getElementById('orderSummary')?.textContent?.includes(empty) ? buttonCreateMyPlan?.setAttribute('disabled', 'true') : buttonCreateMyPlan?.removeAttribute('disabled');
 }

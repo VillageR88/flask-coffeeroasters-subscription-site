@@ -5,10 +5,6 @@
   margin: 0;
 }
 
-.create-your-plan label:hover {
-  cursor: pointer;
-}
-
 .create-your-plan ul {
   padding: 0;
   margin: 0;
@@ -16,6 +12,10 @@
 
 .create-your-plan li {
   list-style-type: none;
+}
+
+.create-your-plan label:hover {
+  cursor: pointer;
 }
 
 main.create-your-plan > div:nth-of-type(1) {
@@ -102,7 +102,22 @@ main.create-your-plan
 main.create-your-plan > form > ul:nth-of-type(1) > li:nth-of-type(1) > label {
   gap: 28.5px;
 }
-/* here now */
+
+main.create-your-plan
+  > form
+  > ul:nth-of-type(1)
+  > li
+  > label:has(input[type="radio"]:disabled) {
+  cursor: not-allowed;
+}
+main.create-your-plan
+  > form
+  > ul:nth-of-type(1)
+  > li
+  > label:has(input[type="radio"]:checked) {
+  cursor: alias;
+}
+
 main.create-your-plan > form > ul:nth-of-type(1) > li:nth-of-type(2) > label {
   gap: 24.5px;
 }
@@ -129,7 +144,12 @@ main.create-your-plan > form > ul:nth-of-type(1) > li > label > span {
   opacity: 0.4;
 }
 
-main.create-your-plan > form > ul:nth-of-type(1) > li > label:hover > span {
+main.create-your-plan
+  > form
+  > ul:nth-of-type(1)
+  > li
+  > label:not(:has(input[type="radio"]:disabled)):hover
+  > span {
   opacity: 0.6;
 }
 

@@ -60,17 +60,45 @@ function experimentalFunction1() {
 }
 experimentalFunction1();
 function selectParallelCheckbox(loop) {
-    var checkboxes = document.getElementsByClassName('createPlanBlocksInput');
-    for (var i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].removeAttribute('checked');
+    var plan = document.getElementsByClassName('plan');
+    var checkedPlan = 0;
+    for (var i = 0; i < plan.length; i++) {
+        if (plan[i].checked === true)
+            checkedPlan = i;
     }
-    for (var i = 0; i < Number(loop); i++) {
-        checkboxes[i].setAttribute('checked', 'checked');
+    console.log(checkedPlan);
+    for (var i = 0; i < plan.length; i++) {
+        plan[i].checked = false;
+        plan[i].setAttribute('disabled', 'true');
+    }
+    for (var i = 0; i < Number(loop) - 1; i++) {
+        plan[i].removeAttribute('disabled');
+    }
+    plan[Number(loop) - 1].checked = true;
+}
+function optionNavSelector(loop) {
+    var plan = document.getElementsByClassName('plan');
+    var checkedPlan = 0;
+    for (var i = 0; i < plan.length; i++) {
+        if (plan[i].checked === true)
+            checkedPlan = i;
+    }
+    if (Number(loop) >= checkedPlan) {
+        for (var i = 0; i < plan.length; i++) {
+            plan[i].checked = false;
+            plan[i].setAttribute('disabled', 'true');
+        }
+        for (var i = 0; i <= Number(loop); i++) {
+            plan[i].removeAttribute('disabled');
+        }
+        if (Number(loop) <= plan.length - 1) {
+            plan[Number(loop)].checked = true;
+        }
     }
 }
-var empty = '_____';
 function checkOrderSummary() {
     var _a, _b;
+    var empty = '_____';
     var buttonCreateMyPlan = document.getElementById('buttonCreateMyPlan');
     ((_b = (_a = document.getElementById('orderSummary')) === null || _a === void 0 ? void 0 : _a.textContent) === null || _b === void 0 ? void 0 : _b.includes(empty)) ? buttonCreateMyPlan === null || buttonCreateMyPlan === void 0 ? void 0 : buttonCreateMyPlan.setAttribute('disabled', 'true') : buttonCreateMyPlan === null || buttonCreateMyPlan === void 0 ? void 0 : buttonCreateMyPlan.removeAttribute('disabled');
 }
