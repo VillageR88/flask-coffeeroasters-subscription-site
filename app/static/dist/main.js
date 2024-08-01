@@ -65,15 +65,14 @@ var empty = '_____';
 var spanIDrinkMyCoffee = '“I drink my coffee';
 var spanEmpty = '';
 function optionCheckboxSelector(loop) {
-    var grindOption = document.getElementById('Want_us_to_grind_them');
     var grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
     var createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput');
     var preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
     if (Number(loop) - 1 === 0) {
         if (preferencesPrefix)
             preferencesPrefix.textContent = spanIDrinkMyCoffee;
-        // if (grindOption) grindOption.textContent = spanEmpty;
-        // if (grindOptionPrefix) grindOptionPrefix.textContent = spanEmpty;
+        if (grindOptionPrefix)
+            grindOptionPrefix.textContent = spanEmpty;
     }
     var spanIds = ['How_do_you_drink_your_coffee', 'What_type_of_coffee', 'How_much_would_you_like', 'Want_us_to_grind_them', 'How_often_should_we_deliver'];
     var plan = document.getElementsByClassName('plan');
@@ -84,8 +83,14 @@ function optionCheckboxSelector(loop) {
     }
     for (var i = 4; i > Number(loop) - 2; i--) {
         var item = document.getElementById(spanIds[i]);
-        if (item)
-            item.textContent = empty;
+        if (item) {
+            if (item.id === 'Want_us_to_grind_them') {
+                item.textContent = '';
+            }
+            else {
+                item.textContent = empty;
+            }
+        }
     }
     for (var i = 0; i < plan.length; i++) {
         if (plan[i].checked === true)

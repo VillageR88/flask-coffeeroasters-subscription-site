@@ -65,14 +65,12 @@ const spanIDrinkMyCoffee = '“I drink my coffee';
 const spanEmpty = '';
 
 function optionCheckboxSelector(loop: string) {
-    const grindOption = document.getElementById('Want_us_to_grind_them');
     const grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
     const createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput') as HTMLCollectionOf<HTMLInputElement>;
     const preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
     if (Number(loop) - 1 === 0) {
         if (preferencesPrefix) preferencesPrefix.textContent = spanIDrinkMyCoffee;
-        // if (grindOption) grindOption.textContent = spanEmpty;
-        // if (grindOptionPrefix) grindOptionPrefix.textContent = spanEmpty;
+        if (grindOptionPrefix) grindOptionPrefix.textContent = spanEmpty;
     }
     const spanIds = ['How_do_you_drink_your_coffee', 'What_type_of_coffee', 'How_much_would_you_like', 'Want_us_to_grind_them', 'How_often_should_we_deliver'];
     const plan = document.getElementsByClassName('plan') as HTMLCollectionOf<HTMLInputElement>;
@@ -82,8 +80,15 @@ function optionCheckboxSelector(loop: string) {
         (createPlanBlocksInput[i].checked = false);
     }
     for (let i = 4; i > Number(loop) - 2; i--) {
+
         const item = document.getElementById(spanIds[i]);
-        if (item) item.textContent = empty;
+        if (item) {
+            if (item.id === 'Want_us_to_grind_them') {
+                item.textContent = '';
+            } else {
+                item.textContent = empty;
+            }
+        }
     }
     for (let i = 0; i < plan.length; i++) {
         if (plan[i].checked === true) checkedPlan = i;
