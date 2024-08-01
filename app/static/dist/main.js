@@ -59,10 +59,19 @@ function experimentalFunction1() {
     });
 }
 experimentalFunction1();
+//global variables
+var empty = '_____';
 function optionCheckboxSelector(loop) {
+    var spanIds = ['How_do_you_drink_your_coffee', 'What_type_of_coffee', 'How_much_would_you_like', 'Want_us_to_grind_them', 'How_often_should_we_deliver'];
     var plan = document.getElementsByClassName('plan');
     var inputOption = document.getElementsByClassName('inputOption');
     var checkedPlan = 0;
+    //we gonna remove (set to var empty '_____') by id spanIds all above loop number
+    for (var i = 4; i > Number(loop) - 2; i--) {
+        var item = document.getElementById(spanIds[i]);
+        if (item)
+            item.textContent = empty;
+    }
     for (var i = 0; i < plan.length; i++) {
         if (plan[i].checked === true)
             checkedPlan = i;
@@ -75,25 +84,6 @@ function optionCheckboxSelector(loop) {
     for (var i = 0; i < Number(loop) - 1; i++) {
         plan[i].removeAttribute('disabled');
     }
-    // Also, we have to do in range to clear all checked inputs from class inputOption according to loop
-    // for (let i = inputOption.length - 1; i >= Number(loop); i--) {
-    //     inputOption[i].checked = false;
-    // } almost good
-    // for (let i = Number(loop) - 1; i >= 0; i--) {
-    //     inputOption[i].checked = false;
-    // } almost good this time but it should be somewhat reversed
-    // for (let i = Number(loop); i < 5; i++) {
-    //     inputOption[i].checked = false;
-    // } I probably understand the problem
-    // It is because inputOption is a class of li of ul but they have 5 ul of 3xli each so
-    // we have to loop through all ul and then through all li
-    // for (let i = 0; i < inputOption.length; i++) {
-    //     inputOption[i].checked = false;
-    // } like this but we don't want to uncheck all but only the ones that are not loop or above
-    // for (let i = 0; i < inputOption.length; i++) { // I don't see loop var here
-    // ok i have idea input class even if there is 0,1,2,3,4 index of inputOption
-    //there is also 3 input in a row
-    //so we have in reality 3x5=15 inputs in total so when we use condition we have to like this
     for (var i = Number(loop) * 3 - 3; i < inputOption.length; i++) {
         console.log(i);
         inputOption[i].checked = false;
@@ -125,7 +115,12 @@ function optionNavSelector(loop) {
 }
 function checkOrderSummary() {
     var _a, _b;
-    var empty = '_____';
     var buttonCreateMyPlan = document.getElementById('buttonCreateMyPlan');
     ((_b = (_a = document.getElementById('orderSummary')) === null || _a === void 0 ? void 0 : _a.textContent) === null || _b === void 0 ? void 0 : _b.includes(empty)) ? buttonCreateMyPlan === null || buttonCreateMyPlan === void 0 ? void 0 : buttonCreateMyPlan.setAttribute('disabled', 'true') : buttonCreateMyPlan === null || buttonCreateMyPlan === void 0 ? void 0 : buttonCreateMyPlan.removeAttribute('disabled');
 }
+// <span id="How_do_you_drink_your_coffee">_____</span>, with a
+// <span id="What_type_of_coffee">_____</span> type of bean.
+// <span id="How_much_would_you_like">_____</span>, ground ala
+// <span id="Want_us_to_grind_them">_____</span>, sent to me
+// <span id="How_often_should_we_deliver">_____</span>.”
+//we gonna also create array of all span ids
