@@ -3,7 +3,7 @@
     {% for item in createPlanNav %}
     <li>
       <label >
-        <input onclick="checkOrderSummary(); optionCheckboxSelector({{ loop.index }})" disabled {% if loop.index==1 %} checked {% endif %} type="radio" name="plan" class="plan" />
+        <input onclick="optionCheckboxSelector({{ loop.index }}); checkOrderSummary();" disabled {% if loop.index==1 %} checked {% endif %} type="radio" name="plan" class="plan" />
         <span>{{ "%02d"|format(loop.index) }}</span>
         <span>{{ item }}</span>
       </label>
@@ -25,7 +25,7 @@
         {% for subItem in item.options %}
         <li>
           <label 
-            onclick="checkOrderSummary(); optionNavSelector({{ parent_index - 1 }}); document.getElementById(`{{ item.title|replace(' ' , '_')|replace('?','') }}`).textContent = '{{ subItem.title }}'">
+            onclick="optionNavSelector({{ parent_index - 1 }}); document.getElementById(`{{ item.title|replace(' ' , '_')|replace('?','') }}`).textContent = '{{ subItem.title }}'; checkOrderSummary();">
             <input  class="inputOption" type="radio" name="{{ item.title|replace(' ' , '_')|replace('?','') }}" />
             <section>
               <h3>{{ subItem.title }}</h3>
