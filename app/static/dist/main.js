@@ -115,6 +115,29 @@ function optionNavSelector(loop) {
             plan[Number(loop)].checked = true;
         }
     }
+    var spanIDrinkMyCoffee = 'I drink my coffee';
+    var spanGroundAla = ', ground ala';
+    var spanEmpty = '';
+    var preferences = document.getElementById('How_do_you_drink_your_coffee');
+    var preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
+    var grindOption = document.getElementById('Want_us_to_grind_them');
+    var grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
+    if (preferencesPrefix && grindOption && preferences && grindOptionPrefix && Number(loop) === 0)
+        if (preferences.textContent === 'Capsule') {
+            grindOption.textContent = spanEmpty;
+            grindOptionPrefix.textContent = spanEmpty;
+            preferencesPrefix.textContent = "".concat(spanIDrinkMyCoffee, " as");
+        }
+        else if (preferences.textContent === 'Filter' || preferences.textContent === 'Espresso') {
+            preferencesPrefix.textContent = "".concat(spanIDrinkMyCoffee, " with");
+            grindOptionPrefix.textContent = spanGroundAla;
+            if (grindOption.textContent === spanEmpty)
+                grindOption.textContent = empty;
+        }
+        else {
+            preferencesPrefix.textContent = spanIDrinkMyCoffee;
+        }
+    ;
 }
 function checkOrderSummary() {
     var _a, _b;

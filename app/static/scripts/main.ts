@@ -115,7 +115,29 @@ function optionNavSelector(loop: string) {
             plan[Number(loop)].checked = true;
         }
     }
+    const spanIDrinkMyCoffee = 'I drink my coffee';
+    const spanGroundAla = ', ground ala';
+    const spanEmpty = '';
+    const preferences = document.getElementById('How_do_you_drink_your_coffee');
+    const preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
+    const grindOption = document.getElementById('Want_us_to_grind_them');
+    const grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
+    if (preferencesPrefix && grindOption && preferences && grindOptionPrefix && Number(loop) === 0)
+        if (preferences.textContent === 'Capsule') {
+            grindOption.textContent = spanEmpty;
+            grindOptionPrefix.textContent = spanEmpty;
+            preferencesPrefix.textContent = `${spanIDrinkMyCoffee} as`;
+        }
+        else if (preferences.textContent === 'Filter' || preferences.textContent === 'Espresso') {
+            preferencesPrefix.textContent = `${spanIDrinkMyCoffee} with`
+            grindOptionPrefix.textContent = spanGroundAla;
+            if (grindOption.textContent === spanEmpty) grindOption.textContent = empty;
+        }
+        else {
+            preferencesPrefix.textContent = spanIDrinkMyCoffee;
+        };
 }
+
 
 function checkOrderSummary() {
     const buttonCreateMyPlan = document.getElementById('buttonCreateMyPlan') as HTMLButtonElement;
@@ -128,3 +150,4 @@ function checkOrderSummary() {
 // <span id="Want_us_to_grind_them">_____</span>, sent to me
 // <span id="How_often_should_we_deliver">_____</span>.”
 //we gonna also create array of all span ids
+

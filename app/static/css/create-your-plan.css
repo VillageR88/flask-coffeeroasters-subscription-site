@@ -450,7 +450,7 @@ main.create-your-plan
   > ul:nth-of-type(2)
   > div:nth-of-type(1)
   > p
-  > span {
+  > span:not(.prefix) {
   color: #0e8784;
 }
 
