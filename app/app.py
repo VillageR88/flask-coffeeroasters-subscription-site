@@ -121,9 +121,9 @@ def get_context():
         },
     ]
     social = [
-        "./components/facebook.html",
-        "./components/twitter.html",
-        "./components/instagram.html",
+        {"title": "Facebook", "component": "./components/facebook.html"},
+        {"title": "Twitter", "component": "./components/twitter.html"},
+        {"title": "Instagram", "component": "./components/instagram.html"},
     ]
     createPlanNav = [
         "Preferences",

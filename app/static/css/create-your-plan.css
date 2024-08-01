@@ -65,7 +65,7 @@ main.create-your-plan > div:nth-of-type(2) {
   box-sizing: border-box;
 }
 
-main.create-your-plan .ulHowItWorks > li > h3 {
+main.create-your-plan .ulHowItWorks > li > h2 {
   color: #fefcf7;
 }
 
