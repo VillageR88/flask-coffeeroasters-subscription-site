@@ -61,6 +61,7 @@ function experimentalFunction1() {
 experimentalFunction1();
 function optionCheckboxSelector(loop) {
     var plan = document.getElementsByClassName('plan');
+    var inputOption = document.getElementsByClassName('inputOption');
     var checkedPlan = 0;
     for (var i = 0; i < plan.length; i++) {
         if (plan[i].checked === true)
@@ -73,6 +74,29 @@ function optionCheckboxSelector(loop) {
     }
     for (var i = 0; i < Number(loop) - 1; i++) {
         plan[i].removeAttribute('disabled');
+    }
+    // Also, we have to do in range to clear all checked inputs from class inputOption according to loop
+    // for (let i = inputOption.length - 1; i >= Number(loop); i--) {
+    //     inputOption[i].checked = false;
+    // } almost good
+    // for (let i = Number(loop) - 1; i >= 0; i--) {
+    //     inputOption[i].checked = false;
+    // } almost good this time but it should be somewhat reversed
+    // for (let i = Number(loop); i < 5; i++) {
+    //     inputOption[i].checked = false;
+    // } I probably understand the problem
+    // It is because inputOption is a class of li of ul but they have 5 ul of 3xli each so
+    // we have to loop through all ul and then through all li
+    // for (let i = 0; i < inputOption.length; i++) {
+    //     inputOption[i].checked = false;
+    // } like this but we don't want to uncheck all but only the ones that are not loop or above
+    // for (let i = 0; i < inputOption.length; i++) { // I don't see loop var here
+    // ok i have idea input class even if there is 0,1,2,3,4 index of inputOption
+    //there is also 3 input in a row
+    //so we have in reality 3x5=15 inputs in total so when we use condition we have to like this
+    for (var i = Number(loop) * 3 - 3; i < inputOption.length; i++) {
+        console.log(i);
+        inputOption[i].checked = false;
     }
     plan[Number(loop) - 1].checked = true;
 }
