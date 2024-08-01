@@ -262,6 +262,46 @@ main.create-your-plan
 
 main.create-your-plan
   > form
+  > ul:nth-of-type(2):has(
+    li:nth-of-type(1) > ul > li input[type="radio"]:checked
+  )
+  > li:nth-of-type(2)
+  > ul {
+  display: grid;
+}
+
+main.create-your-plan
+  > form
+  > ul:nth-of-type(2):has(
+    li:nth-of-type(2) > ul > li input[type="radio"]:checked
+  )
+  > li:nth-of-type(3)
+  > ul {
+  display: grid;
+}
+
+main.create-your-plan
+  > form
+  > ul:nth-of-type(2):has(
+    li:nth-of-type(3) > ul > li input[type="radio"]:checked
+  )
+  > li:nth-of-type(4)
+  > ul {
+  display: grid;
+}
+
+main.create-your-plan
+  > form
+  > ul:nth-of-type(2):has(
+    li:nth-of-type(4) > ul > li input[type="radio"]:checked
+  )
+  > li:nth-of-type(5)
+  > ul {
+  display: grid;
+}
+
+main.create-your-plan
+  > form
   > ul:nth-of-type(2)
   > li
   > ul

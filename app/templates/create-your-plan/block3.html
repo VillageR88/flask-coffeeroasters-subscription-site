@@ -30,7 +30,8 @@
         {% for subItem in item.options %}
         
         <li>
-        <label onclick="checkOrderSummary(); document.getElementById(`{{ item.title|replace(' ' , '_')|replace('?','') }}`).textContent = '{{ subItem.title }}'">            <input
+        <label onclick="checkOrderSummary(); document.getElementById(`{{ item.title|replace(' ' , '_')|replace('?','') }}`).textContent = '{{ subItem.title }}'">
+        <input
               class="inputOption"
               type="radio"
               name="{{ item.title|replace(' ' , '_')|replace('?','') }}"
