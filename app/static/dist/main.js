@@ -62,8 +62,19 @@ function experimentalFunction1() {
 experimentalFunction1();
 //global variables
 var empty = '_____';
-var createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput');
+var spanIDrinkMyCoffee = '“I drink my coffee';
+var spanEmpty = '';
 function optionCheckboxSelector(loop) {
+    var grindOption = document.getElementById('Want_us_to_grind_them');
+    var grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
+    var createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput');
+    var preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
+    if (Number(loop) - 1 === 0) {
+        if (preferencesPrefix)
+            preferencesPrefix.textContent = spanIDrinkMyCoffee;
+        // if (grindOption) grindOption.textContent = spanEmpty;
+        // if (grindOptionPrefix) grindOptionPrefix.textContent = spanEmpty;
+    }
     var spanIds = ['How_do_you_drink_your_coffee', 'What_type_of_coffee', 'How_much_would_you_like', 'Want_us_to_grind_them', 'How_often_should_we_deliver'];
     var plan = document.getElementsByClassName('plan');
     var inputOption = document.getElementsByClassName('inputOption');
@@ -93,6 +104,8 @@ function optionCheckboxSelector(loop) {
     plan[Number(loop) - 1].checked = true;
 }
 function optionNavSelector(loop) {
+    var createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput');
+    var preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
     var plan = document.getElementsByClassName('plan');
     var checkedPlan = 0;
     for (var i = 0; i < plan.length; i++) {
@@ -115,11 +128,8 @@ function optionNavSelector(loop) {
             plan[Number(loop)].checked = true;
         }
     }
-    var spanIDrinkMyCoffee = 'I drink my coffee';
     var spanGroundAla = ', ground ala';
-    var spanEmpty = '';
     var preferences = document.getElementById('How_do_you_drink_your_coffee');
-    var preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
     var grindOption = document.getElementById('Want_us_to_grind_them');
     var grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
     if (preferencesPrefix && grindOption && preferences && grindOptionPrefix && Number(loop) === 0)

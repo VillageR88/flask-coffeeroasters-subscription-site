@@ -61,9 +61,19 @@ experimentalFunction1();
 
 //global variables
 const empty = '_____';
-const createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput') as HTMLCollectionOf<HTMLInputElement>;
+const spanIDrinkMyCoffee = '“I drink my coffee';
+const spanEmpty = '';
 
 function optionCheckboxSelector(loop: string) {
+    const grindOption = document.getElementById('Want_us_to_grind_them');
+    const grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
+    const createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput') as HTMLCollectionOf<HTMLInputElement>;
+    const preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
+    if (Number(loop) - 1 === 0) {
+        if (preferencesPrefix) preferencesPrefix.textContent = spanIDrinkMyCoffee;
+        // if (grindOption) grindOption.textContent = spanEmpty;
+        // if (grindOptionPrefix) grindOptionPrefix.textContent = spanEmpty;
+    }
     const spanIds = ['How_do_you_drink_your_coffee', 'What_type_of_coffee', 'How_much_would_you_like', 'Want_us_to_grind_them', 'How_often_should_we_deliver'];
     const plan = document.getElementsByClassName('plan') as HTMLCollectionOf<HTMLInputElement>;
     const inputOption = document.getElementsByClassName('inputOption') as HTMLCollectionOf<HTMLInputElement>;
@@ -93,6 +103,8 @@ function optionCheckboxSelector(loop: string) {
 }
 
 function optionNavSelector(loop: string) {
+    const createPlanBlocksInput = document.getElementsByClassName('createPlanBlocksInput') as HTMLCollectionOf<HTMLInputElement>;
+    const preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
     const plan = document.getElementsByClassName('plan') as HTMLCollectionOf<HTMLInputElement>;
     let checkedPlan = 0;
     for (let i = 0; i < plan.length; i++) {
@@ -115,11 +127,8 @@ function optionNavSelector(loop: string) {
             plan[Number(loop)].checked = true;
         }
     }
-    const spanIDrinkMyCoffee = 'I drink my coffee';
     const spanGroundAla = ', ground ala';
-    const spanEmpty = '';
     const preferences = document.getElementById('How_do_you_drink_your_coffee');
-    const preferencesPrefix = document.getElementById('How_do_you_drink_your_coffeePrefix');
     const grindOption = document.getElementById('Want_us_to_grind_them');
     const grindOptionPrefix = document.getElementById('Want_us_to_grind_themPrefix');
     if (preferencesPrefix && grindOption && preferences && grindOptionPrefix && Number(loop) === 0)
