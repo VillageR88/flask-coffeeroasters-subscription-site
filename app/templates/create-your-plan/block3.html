@@ -13,32 +13,34 @@
       </li>
       {% endfor %}
     </ul>
-    <ul>
-      {% for item in createPlanBlocks %}
-      <li>
-        <label id="{{ item.title|replace(' ' , '_')|replace('?','') }}Label">
-          <h2>{{ item.title }}</h2>
-          <input {% if loop.index==1 %} checked {% endif %} name="{{ item.title }}" disabled
-            class="createPlanBlocksInput" type="radio" />
-        </label>
-        <ul>
-          {% set parent_index = loop.index %}
-          {% set parrent_last = loop.last %}
-          {% for subItem in item.options %}
-          <li>
-            <label
-              onclick="optionNavSelector({{ parent_index - 1 }}); document.getElementById(`{{ item.title|replace(' ' , '_')|replace('?','') }}`).textContent = '{{ subItem.title }}'; checkOrderSummary();">
-              <input class="inputOption" type="radio" name="{{ item.title|replace(' ' , '_')|replace('?','') }}" />
-              <section>
-                <h3>{{ subItem.title }}</h3>
-                <p>{{ subItem.description }}</p>
-              </section>
-            </label>
-          </li>
+    <div>
+      <ul>
+        {% for item in createPlanBlocks %}
+        <li>
+          <label id="{{ item.title|replace(' ' , '_')|replace('?','') }}Label">
+            <h2>{{ item.title }}</h2>
+            <input {% if loop.index==1 %} checked {% endif %} name="{{ item.title }}" disabled
+              class="createPlanBlocksInput" type="radio" />
+          </label>
+          <ul>
+            {% set parent_index = loop.index %}
+            {% set parrent_last = loop.last %}
+            {% for subItem in item.options %}
+            <li>
+              <label
+                onclick="optionNavSelector({{ parent_index - 1 }}); document.getElementById(`{{ item.title|replace(' ' , '_')|replace('?','') }}`).textContent = '{{ subItem.title }}'; checkOrderSummary();">
+                <input class="inputOption" type="radio" name="{{ item.title|replace(' ' , '_')|replace('?','') }}" />
+                <section>
+                  <h3>{{ subItem.title }}</h3>
+                  <p>{{ subItem.description }}</p>
+                </section>
+              </label>
+            </li>
+            {% endfor %}
+          </ul>
           {% endfor %}
-        </ul>
-        {% endfor %}
-      </li>
+        </li>
+      </ul>
       <div id="orderSummary">
         <h3>ORDER SUMMARY</h2>
           <p id="coffee-description">
@@ -51,7 +53,7 @@
             <span id="How_often_should_we_deliver">_____</span>.”
           </p>
       </div>
-    </ul>
+    </div>
   </div>
   <button type="submit" disabled id="buttonCreateMyPlan">Create my plan!</button>
 

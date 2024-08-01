@@ -246,29 +246,37 @@ main.create-your-plan > form > div > ul:nth-of-type(1) > li:last-of-type > hr {
   display: none;
 }
 
-main.create-your-plan > form > div > ul:nth-of-type(2) {
+main.create-your-plan > form > div > div {
+  max-width: 730px;
+
   display: flex;
   flex-direction: column;
-  max-width: 730px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+main.create-your-plan > form > div > div > ul:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   gap: 88px;
 }
 
-main.create-your-plan > form > div > ul:nth-of-type(2) > li {
+main.create-your-plan > form > div > div > ul:nth-of-type(1) > li {
   display: flex;
   flex-direction: column;
   gap: 56px;
   box-sizing: border-box;
 }
 
-main.create-your-plan > form > div > ul:nth-of-type(2) > li > label {
+main.create-your-plan > form > div > div > ul:nth-of-type(1) > li > label {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
 }
 
-main.create-your-plan > form > div > ul:nth-of-type(2) > li > label > h2 {
+main.create-your-plan > form > div > div > ul:nth-of-type(1) > li > label > h2 {
   font-family: fraunces;
   font-size: 40px;
   font-weight: var(--font-black);
@@ -283,7 +291,8 @@ main.create-your-plan > form > div * {
 main.create-your-plan
   > form
   > div
-  > ul:nth-of-type(2)
+  > div
+  > ul:nth-of-type(1)
   > li
   > label
   > input[type="radio"] {
@@ -298,24 +307,39 @@ main.create-your-plan
 main.create-your-plan
   > form
   > div
-  > ul:nth-of-type(2)
+  > div
+  > ul:nth-of-type(1)
   > li
   > label
   > input[type="radio"]:checked {
   transform: scaleY(-1);
 }
 
-main.create-your-plan > form > div > ul:nth-of-type(2) > li > label:hover {
+main.create-your-plan
+  > form
+  > div
+  > div
+  > ul:nth-of-type(1)
+  > li
+  > label:hover {
   cursor: default;
 }
 
-main.create-your-plan > form > div > ul:nth-of-type(2) > li > ul {
+main.create-your-plan > form > div > div > ul:nth-of-type(1) > li > ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 23px;
 }
 
-main.create-your-plan > form > div > ul:nth-of-type(2) > li > ul > li > label {
+main.create-your-plan
+  > form
+  > div
+  > div
+  > ul:nth-of-type(1)
+  > li
+  > ul
+  > li
+  > label {
   width: 100%;
   height: 250px;
   display: flex;
@@ -327,7 +351,8 @@ main.create-your-plan > form > div > ul:nth-of-type(2) > li > ul > li > label {
 main.create-your-plan
   > form
   > div
-  > ul:nth-of-type(2)
+  > div
+  > ul:nth-of-type(1)
   > li:not(:has(input[type="radio"]:checked))
   > ul {
   display: none;
@@ -336,7 +361,8 @@ main.create-your-plan
 main.create-your-plan
   > form
   > div
-  > ul:nth-of-type(2):has(
+  > div
+  > ul:nth-of-type(1):has(
     li:nth-of-type(1) > ul > li input[type="radio"]:checked
   )
   > li:nth-of-type(2)
@@ -347,7 +373,8 @@ main.create-your-plan
 main.create-your-plan
   > form
   > div
-  > ul:nth-of-type(2):has(
+  > div
+  > ul:nth-of-type(1):has(
     li:nth-of-type(2) > ul > li input[type="radio"]:checked
   )
   > li:nth-of-type(3)
@@ -358,7 +385,8 @@ main.create-your-plan
 main.create-your-plan:not(:has(.cloaked))
   > form
   > div
-  > ul:nth-of-type(2):has(
+  > div
+  > ul:nth-of-type(1):has(
     li:nth-of-type(3) > ul > li input[type="radio"]:checked
   )
   > li:nth-of-type(4)
@@ -369,7 +397,8 @@ main.create-your-plan:not(:has(.cloaked))
 main.create-your-plan:has(.cloaked)
   > form
   > div
-  > ul:nth-of-type(2):has(
+  > div
+  > ul:nth-of-type(1):has(
     li:nth-of-type(3) > ul > li input[type="radio"]:checked
   )
   > li:nth-of-type(4)
@@ -379,7 +408,8 @@ main.create-your-plan:has(.cloaked)
 main.create-your-plan:has(.cloaked)
   > form
   > div
-  > ul:nth-of-type(2):has(
+  > div
+  > ul:nth-of-type(1):has(
     li:nth-of-type(3) > ul > li input[type="radio"]:checked
   )
   > li:nth-of-type(5)
@@ -390,7 +420,8 @@ main.create-your-plan:has(.cloaked)
 main.create-your-plan
   > form
   > div
-  > ul:nth-of-type(2):has(
+  > div
+  > ul:nth-of-type(1):has(
     li:nth-of-type(4) > ul > li input[type="radio"]:checked
   )
   > li:nth-of-type(5)
@@ -401,7 +432,8 @@ main.create-your-plan
 main.create-your-plan
   > form
   > div
-  > ul:nth-of-type(2)
+  > div
+  > ul:nth-of-type(1)
   > li
   > ul
   > li
@@ -412,7 +444,8 @@ main.create-your-plan
 main.create-your-plan
   > form
   > div
-  > ul:nth-of-type(2)
+  > div
+  > ul:nth-of-type(1)
   > li
   > ul
   > li
@@ -423,7 +456,8 @@ main.create-your-plan
 main.create-your-plan
   > form
   > div
-  > ul:nth-of-type(2)
+  > div
+  > ul:nth-of-type(1)
   > li
   > ul
   > li
@@ -435,7 +469,8 @@ main.create-your-plan
 main.create-your-plan
   > form
   > div
-  > ul:nth-of-type(2)
+  > div
+  > ul:nth-of-type(1)
   > li
   > ul
   > li
@@ -451,7 +486,8 @@ main.create-your-plan
 main.create-your-plan
   > form
   > div
-  > ul:nth-of-type(2)
+  > div
+  > ul:nth-of-type(1)
   > li
   > ul
   > li
@@ -468,7 +504,8 @@ main.create-your-plan
 main.create-your-plan
   > form
   > div
-  > ul:nth-of-type(2)
+  > div
+  > ul:nth-of-type(1)
   > li
   > ul
   > li
@@ -485,7 +522,8 @@ main.create-your-plan
 main.create-your-plan
   > form
   > div
-  > ul:nth-of-type(2)
+  > div
+  > ul:nth-of-type(1)
   > li
   > ul
   > li
@@ -497,7 +535,8 @@ main.create-your-plan
   line-height: 26px;
 }
 
-main.create-your-plan > form > div > ul:nth-of-type(2) > div:nth-of-type(1) {
+main.create-your-plan > form > div > div > div:nth-of-type(1) {
+  margin-top: 88px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -510,12 +549,7 @@ main.create-your-plan > form > div > ul:nth-of-type(2) > div:nth-of-type(1) {
   box-sizing: border-box;
 }
 
-main.create-your-plan
-  > form
-  > div
-  > ul:nth-of-type(2)
-  > div:nth-of-type(1)
-  > h3 {
+main.create-your-plan > form > div > div > div:nth-of-type(1) > h3 {
   color: white;
   opacity: 0.5;
   font-family: barlow;
@@ -524,12 +558,7 @@ main.create-your-plan
   font-weight: 300;
 }
 
-main.create-your-plan
-  > form
-  > div
-  > ul:nth-of-type(2)
-  > div:nth-of-type(1)
-  > p {
+main.create-your-plan > form > div > div > div:nth-of-type(1) > p {
   color: white;
   font-family: fraunces;
   font-size: 24px;
@@ -539,7 +568,7 @@ main.create-your-plan
 main.create-your-plan
   > form
   > div
-  > ul:nth-of-type(2)
+  > div
   > div:nth-of-type(1)
   > p
   > span:not(.prefix) {
