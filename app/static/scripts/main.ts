@@ -325,10 +325,53 @@ document.addEventListener("keydown", (event) => {
 	const How_often_should_we_deliver = document.getElementById(
 		"How_often_should_we_deliver",
 	);
-	const How_often_should_we_deliverPrice =
-		How_often_should_we_deliver?.textContent;
+
+	const weight250g = "250g";
+	const weight500g = "500g";
+	const weight1000g = "1000g";
+	const everyWeek = "Every week";
+	const every2Weeks = "Every 2 weeks";
+	const everyMonth = "Every month";
+	const price =
+		How_much_would_you_like?.textContent === weight250g
+			? How_often_should_we_deliver?.textContent === everyWeek
+				? 7.2
+				: How_often_should_we_deliver?.textContent === every2Weeks
+					? 9.6
+					: How_often_should_we_deliver?.textContent === everyMonth
+						? 12
+						: 0
+			: How_much_would_you_like?.textContent === weight500g
+				? How_often_should_we_deliver?.textContent === everyWeek
+					? 13
+					: How_often_should_we_deliver?.textContent === every2Weeks
+						? 17.5
+						: How_often_should_we_deliver?.textContent === everyMonth
+							? 22
+							: 0
+				: How_much_would_you_like?.textContent === weight1000g
+					? How_often_should_we_deliver?.textContent === everyWeek
+						? 22
+						: How_often_should_we_deliver?.textContent === every2Weeks
+							? 32
+							: How_often_should_we_deliver?.textContent === everyMonth
+								? 42
+								: 0
+					: 0;
+	const perShipmentPrice = price;
+	let perMonthPrice = 0;
+
+	if (How_often_should_we_deliver?.textContent === everyWeek) {
+		perMonthPrice = perShipmentPrice * 4;
+	} else if (How_often_should_we_deliver?.textContent === every2Weeks) {
+		perMonthPrice = perShipmentPrice * 2;
+	} else if (How_often_should_we_deliver?.textContent === everyMonth) {
+		perMonthPrice = perShipmentPrice * 1;
+	}
+
+	const formattedPerMonthPrice = `${perMonthPrice.toFixed(2)} / mo`;
 
 	if (event.key === " ") {
-		console.log(How_often_should_we_deliverPrice);
+		console.log(formattedPerMonthPrice);
 	}
 });

@@ -260,8 +260,50 @@ document.addEventListener("keydown", function (event) {
     var How_much_would_you_like = document.getElementById("How_much_would_you_like");
     var Want_us_to_grind_them = document.getElementById("Want_us_to_grind_them");
     var How_often_should_we_deliver = document.getElementById("How_often_should_we_deliver");
-    var How_often_should_we_deliverPrice = How_often_should_we_deliver === null || How_often_should_we_deliver === void 0 ? void 0 : How_often_should_we_deliver.textContent;
+    var weight250g = "250g";
+    var weight500g = "500g";
+    var weight1000g = "1000g";
+    var everyWeek = "Every week";
+    var every2Weeks = "Every 2 weeks";
+    var everyMonth = "Every month";
+    var price = (How_much_would_you_like === null || How_much_would_you_like === void 0 ? void 0 : How_much_would_you_like.textContent) === weight250g
+        ? (How_often_should_we_deliver === null || How_often_should_we_deliver === void 0 ? void 0 : How_often_should_we_deliver.textContent) === everyWeek
+            ? 7.2
+            : (How_often_should_we_deliver === null || How_often_should_we_deliver === void 0 ? void 0 : How_often_should_we_deliver.textContent) === every2Weeks
+                ? 9.6
+                : (How_often_should_we_deliver === null || How_often_should_we_deliver === void 0 ? void 0 : How_often_should_we_deliver.textContent) === everyMonth
+                    ? 12
+                    : 0
+        : (How_much_would_you_like === null || How_much_would_you_like === void 0 ? void 0 : How_much_would_you_like.textContent) === weight500g
+            ? (How_often_should_we_deliver === null || How_often_should_we_deliver === void 0 ? void 0 : How_often_should_we_deliver.textContent) === everyWeek
+                ? 13
+                : (How_often_should_we_deliver === null || How_often_should_we_deliver === void 0 ? void 0 : How_often_should_we_deliver.textContent) === every2Weeks
+                    ? 17.5
+                    : (How_often_should_we_deliver === null || How_often_should_we_deliver === void 0 ? void 0 : How_often_should_we_deliver.textContent) === everyMonth
+                        ? 22
+                        : 0
+            : (How_much_would_you_like === null || How_much_would_you_like === void 0 ? void 0 : How_much_would_you_like.textContent) === weight1000g
+                ? (How_often_should_we_deliver === null || How_often_should_we_deliver === void 0 ? void 0 : How_often_should_we_deliver.textContent) === everyWeek
+                    ? 22
+                    : (How_often_should_we_deliver === null || How_often_should_we_deliver === void 0 ? void 0 : How_often_should_we_deliver.textContent) === every2Weeks
+                        ? 32
+                        : (How_often_should_we_deliver === null || How_often_should_we_deliver === void 0 ? void 0 : How_often_should_we_deliver.textContent) === everyMonth
+                            ? 42
+                            : 0
+                : 0;
+    var perShipmentPrice = price;
+    var perMonthPrice = 0;
+    if ((How_often_should_we_deliver === null || How_often_should_we_deliver === void 0 ? void 0 : How_often_should_we_deliver.textContent) === everyWeek) {
+        perMonthPrice = perShipmentPrice * 4;
+    }
+    else if ((How_often_should_we_deliver === null || How_often_should_we_deliver === void 0 ? void 0 : How_often_should_we_deliver.textContent) === every2Weeks) {
+        perMonthPrice = perShipmentPrice * 2;
+    }
+    else if ((How_often_should_we_deliver === null || How_often_should_we_deliver === void 0 ? void 0 : How_often_should_we_deliver.textContent) === everyMonth) {
+        perMonthPrice = perShipmentPrice * 1;
+    }
+    var formattedPerMonthPrice = "".concat(perMonthPrice.toFixed(2), " / mo");
     if (event.key === " ") {
-        console.log(How_often_should_we_deliverPrice);
+        console.log(formattedPerMonthPrice);
     }
 });
