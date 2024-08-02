@@ -29,7 +29,7 @@
             <li>
               <label
                 onclick="optionNavSelector({{ parent_index - 1 }}); document.getElementById(`{{ item.title|replace(' ' , '_')|replace('?','') }}`).textContent = '{{ subItem.title }}'; checkOrderSummary();"
-                onkeyup="if(event.keyCode == 13) {optionNavSelector({{ parent_index - 1 }}); document.getElementById(`{{ item.title|replace(' ' , '_')|replace('?','') }}`).textContent = '{{ subItem.title }}'; checkOrderSummary();}"
+                onkeyup="if(event.keyCode == 13) {this.click();}"
                 tabindex="0">
                 <input class="inputOption" type="radio" name="{{ item.title|replace(' ' , '_')|replace('?','') }}" />
                 <section>

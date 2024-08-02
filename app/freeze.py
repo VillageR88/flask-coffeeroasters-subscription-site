@@ -1,5 +1,5 @@
 from flask_frozen import Freezer
-from app import create_app
+from app import app
 
 app = app
 app.config["FREEZER_BASE_URL"] = "."  # Set the base URL for the freezer
