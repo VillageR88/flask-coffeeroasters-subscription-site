@@ -14,24 +14,41 @@
   align-items: center;
 }
 
+.circle {
+  min-width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  border: 2px solid #0e8784;
+  box-sizing: border-box;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #fdd6ba;
+}
+
+.ulHowItWorks > li:last-child > .circleLine > .line {
+  display: none;
+}
+
 .ulHowItWorks {
-  max-width: 1045px;
+  width: 100%;
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: baseline;
   padding: 0;
   margin: 0;
 }
 
 .ulHowItWorks > li {
-  max-width: 285px;
-  width: 100%;
-  margin-top: 67px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  gap: 67px;
 }
 
-.ulHowItWorks > li > span {
+.ulHowItWorks > li > section > span {
   font-family: fraunces;
   font-size: 72px;
   font-weight: var(--font-black);
@@ -39,15 +56,7 @@
   line-height: 72px;
 }
 
-.ulHowItWorks > li > span {
-  font-family: fraunces;
-  font-size: 72px;
-  font-weight: var(--font-black);
-  color: #fdd6ba;
-  line-height: 72px;
-}
-
-.ulHowItWorks > li > h2 {
+.ulHowItWorks > li > section > h2 {
   max-width: 255px;
   margin-top: 38px;
   font-family: fraunces;
@@ -56,7 +65,8 @@
   line-height: 36px;
 }
 
-.ulHowItWorks > li > p {
+.ulHowItWorks > li > section > p {
+  max-width: 285px;
   margin-top: 42px;
   font-family: barlow;
   font-size: 16px;
@@ -78,7 +88,9 @@ a {
 nav > ul > li > a:hover {
   color: #333d4b;
 }
-
+html {
+  width: 100%;
+}
 body {
   background-color: #fefcf7;
   padding-top: 43px;
@@ -99,15 +111,17 @@ main {
   flex-direction: column;
   align-items: center;
   max-width: 1280px;
-  width: 100%;
+  width: calc(100% - 80px);
 }
 
 nav {
-  max-width: 1280px;
+  max-width: calc(1280px + 80px);
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-inline: 40px;
+  box-sizing: border-box;
 }
 
 nav > svg.logo > * {
@@ -177,4 +191,10 @@ footer > div > div:nth-last-of-type(1) > ul > li > a:hover {
 
 svg.logo > * {
   fill: #ffffff;
+}
+
+@media screen and (max-width: 1280px) {
+  .ulHowItWorks > li {
+    gap: 48px;
+  }
 }

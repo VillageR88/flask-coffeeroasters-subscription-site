@@ -6,15 +6,16 @@
     {% for item in collection %}
     <li>
       <img
+        class="collectionImage"
         width="255"
         height="193"
         src="{{ item.image }}"
         alt="{{ item.name }}"
       />
-      <div>
-        <h3>{{ item.title }}</h3>
+      <section>
+        <h2>{{ item.title }}</h2>
         <p>{{ item.description }}</p>
-      </div>
+      </section>
     </li>
     {% endfor %}
   </ul>
