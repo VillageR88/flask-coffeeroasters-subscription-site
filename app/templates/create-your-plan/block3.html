@@ -31,7 +31,7 @@
                 onclick="optionSelector({{ parent_index - 1 }}); document.getElementById(`{{ item.title|replace(' ' , '_')|replace('?','') }}`).textContent = '{{ subItem.title }}'; checkOrderSummary();"
                 onkeyup="if(event.keyCode == 13) {this.click();}"
                 tabindex="0">
-                <input class="inputOption" type="radio" name="{{ item.title|replace(' ' , '_')|replace('?','') }}" />
+                <input id="inputOption{{ item.title|replace(' ' , '_')|replace('?','') }}{{subItem.title}}" class="inputOption inputOption{{ item.title|replace(' ' , '_')|replace('?','') }}" type="radio" name="{{ item.title|replace(' ' , '_')|replace('?','') }}" />
                 <section>
                   <h3>{{ subItem.title }}</h3>
                   <p>{{ subItem.description }}</p>

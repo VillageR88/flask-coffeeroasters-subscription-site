@@ -133,7 +133,8 @@ function optionSelector(loop) {
         for (var i = 0; i <= Number(loop); i++) {
             plan[i].removeAttribute("disabled");
         }
-        if (Number(loop) === 2 && document.querySelector('main.create-your-plan .cloaked')) {
+        if (Number(loop) === 2 &&
+            document.querySelector("main.create-your-plan .cloaked")) {
             plan[Number(loop) + 2].checked = true;
             createPlanBlocksInput[Number(loop) + 1].checked = true;
         }
@@ -150,16 +151,19 @@ function optionSelector(loop) {
     var grindOption = document.getElementById("Want_us_to_grind_them");
     var grindOptionPrefix = document.getElementById("Want_us_to_grind_themPrefix");
     var wantUsToGrindThem = document.getElementById("Want_us_to_grind_themLabel");
+    var inputOptionHow_do_you_drink_your_coffeeCapsule = document.getElementById("inputOptionHow_do_you_drink_your_coffeeCapsule");
+    var inputOptionWant_us_to_grind_them = document.getElementsByClassName("inputOptionWant_us_to_grind_them");
     if (preferencesPrefix &&
         grindOption &&
         preferences &&
         grindOptionPrefix &&
-        Number(loop) === 0)
+        Number(loop) === 0) {
         if (preferences.textContent === "Capsule") {
             grindOption.textContent = spanEmpty;
             grindOptionPrefix.textContent = spanEmpty;
             preferencesPrefix.textContent = "".concat(spanIDrinkMyCoffee, " as");
             wantUsToGrindThem === null || wantUsToGrindThem === void 0 ? void 0 : wantUsToGrindThem.classList.add("cloaked");
+            //
         }
         else if (preferences.textContent === "Filter" ||
             preferences.textContent === "Espresso") {
@@ -172,6 +176,12 @@ function optionSelector(loop) {
         else {
             preferencesPrefix.textContent = spanIDrinkMyCoffee;
         }
+        if (inputOptionHow_do_you_drink_your_coffeeCapsule.checked) {
+            for (var i = 0; i < inputOptionWant_us_to_grind_them.length; i++) {
+                inputOptionWant_us_to_grind_them[i].checked = false;
+            }
+        }
+    }
 }
 function checkOrderSummary() {
     var _a, _b;
