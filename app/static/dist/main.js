@@ -59,7 +59,7 @@ function experimentalFunction1() {
         loadContent(window.location.pathname); // Load content based on the initial path
     });
 }
-experimentalFunction1();
+experimentalFunction1(); // If you want to use this function (at current stage) in your project, you do it on your own risk.
 //global variables
 var empty = "_____";
 var spanIDrinkMyCoffee = "“I drink my coffee";
@@ -226,6 +226,7 @@ function handleMask() {
         How_often_should_we_deliverCopy.textContent =
             How_often_should_we_deliver.textContent;
     }
+    calculatePrice();
     var mask = document.getElementById("mask");
     if (mask) {
         if ((mask === null || mask === void 0 ? void 0 : mask.style.display) === "flex") {
@@ -234,31 +235,9 @@ function handleMask() {
         else
             mask.style.display = "flex";
     }
-    //add for debug event listener space pressed console.log('test)
-    /*
- - If 250g weight is selected
-    - Every Week price per shipment is $7.20
-    - Every 2 Weeks price per shipment is $9.60
-    - Every Month price per shipment is $12.00
-  - If 500g weight is selected
-    - Every Week price per shipment is $13.00
-    - Every 2 Weeks price per shipment is $17.50
-    - Every Month price per shipment is $22.00
-  - If 1000g weight is selected
-    - Every Week price per shipment is $22.00
-    - Every 2 Weeks price per shipment is $32.00
-    - Every Month price per shipment is $42.00
-- Calculating per month cost for the Order Summary modal
-  - If Every Week is selected, the Order Summary modal should show the per shipment price multiplied by 4. For example, if 250g weight is selected, the price would be $28.80/month
-  - If Every 2 Weeks is selected, the Order Summary modal should show the per shipment price multiplied by 2. For example, if 250g weight is selected, the price would be $19.20/month
-  - If Every Month is selected, the Order Summary modal should show the per shipment price multiplied by 1. For example, if 250g weight is selected, the price would be $12.00/month
-  */
 }
-document.addEventListener("keydown", function (event) {
-    var How_do_you_drink_your_coffee = document.getElementById("How_do_you_drink_your_coffee");
-    var What_type_of_coffee = document.getElementById("What_type_of_coffee");
+function calculatePrice() {
     var How_much_would_you_like = document.getElementById("How_much_would_you_like");
-    var Want_us_to_grind_them = document.getElementById("Want_us_to_grind_them");
     var How_often_should_we_deliver = document.getElementById("How_often_should_we_deliver");
     var weight250g = "250g";
     var weight500g = "500g";
@@ -303,7 +282,7 @@ document.addEventListener("keydown", function (event) {
         perMonthPrice = perShipmentPrice * 1;
     }
     var formattedPerMonthPrice = "".concat(perMonthPrice.toFixed(2), " / mo");
-    if (event.key === " ") {
-        console.log(formattedPerMonthPrice);
-    }
-});
+    var formattedPerMonthPriceSpan = document.getElementById("formattedPerMonthPriceSpan");
+    if (formattedPerMonthPriceSpan)
+        formattedPerMonthPriceSpan.textContent = formattedPerMonthPrice;
+}
