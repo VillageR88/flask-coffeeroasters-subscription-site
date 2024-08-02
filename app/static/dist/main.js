@@ -64,7 +64,7 @@ experimentalFunction1();
 var empty = "_____";
 var spanIDrinkMyCoffee = "“I drink my coffee";
 var spanEmpty = "";
-function optionCheckboxSelector(loop) {
+function navSelector(loop) {
     var wantUsToGrindThem = document.getElementById("Want_us_to_grind_themLabel");
     var grindOptionPrefix = document.getElementById("Want_us_to_grind_themPrefix");
     var createPlanBlocksInput = document.getElementsByClassName("createPlanBlocksInput");
@@ -116,7 +116,7 @@ function optionCheckboxSelector(loop) {
     }
     plan[Number(loop) - 1].checked = true;
 }
-function optionNavSelector(loop) {
+function optionSelector(loop) {
     var createPlanBlocksInput = document.getElementsByClassName("createPlanBlocksInput");
     var preferencesPrefix = document.getElementById("How_do_you_drink_your_coffeePrefix");
     var plan = document.getElementsByClassName("plan");

@@ -64,7 +64,7 @@ const empty = "_____";
 const spanIDrinkMyCoffee = "“I drink my coffee";
 const spanEmpty = "";
 
-function optionCheckboxSelector(loop: string) {
+function navSelector(loop: string) {
     const wantUsToGrindThem = document.getElementById(
         "Want_us_to_grind_themLabel",
     );
@@ -125,7 +125,7 @@ function optionCheckboxSelector(loop: string) {
     plan[Number(loop) - 1].checked = true;
 }
 
-function optionNavSelector(loop: string) {
+function optionSelector(loop: string) {
     const createPlanBlocksInput = document.getElementsByClassName(
         "createPlanBlocksInput",
     ) as HTMLCollectionOf<HTMLInputElement>;
