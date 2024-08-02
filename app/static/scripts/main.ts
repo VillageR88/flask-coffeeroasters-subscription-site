@@ -219,6 +219,66 @@ function checkOrderSummary() {
 }
 
 function handleMask() {
+	const How_do_you_drink_your_coffeePrefix = document.getElementById(
+		"How_do_you_drink_your_coffeePrefix",
+	);
+	const How_do_you_drink_your_coffeePrefixCopy = document.getElementById(
+		"How_do_you_drink_your_coffeePrefixCopy",
+	);
+	const How_do_you_drink_your_coffee = document.getElementById(
+		"How_do_you_drink_your_coffee",
+	);
+	const How_do_you_drink_your_coffeeCopy = document.getElementById(
+		"How_do_you_drink_your_coffeeCopy",
+	);
+	const What_type_of_coffee = document.getElementById("What_type_of_coffee");
+	const What_type_of_coffeeCopy = document.getElementById(
+		"What_type_of_coffeeCopy",
+	);
+	const How_much_would_you_like = document.getElementById(
+		"How_much_would_you_like",
+	);
+	const How_much_would_you_likeCopy = document.getElementById(
+		"How_much_would_you_likeCopy",
+	);
+	const Want_us_to_grind_them = document.getElementById(
+		"Want_us_to_grind_them",
+	);
+	const Want_us_to_grind_themCopy = document.getElementById(
+		"Want_us_to_grind_themCopy",
+	);
+	const How_often_should_we_deliver = document.getElementById(
+		"How_often_should_we_deliver",
+	);
+	const How_often_should_we_deliverCopy = document.getElementById(
+		"How_often_should_we_deliverCopy",
+	);
+	if (
+		How_do_you_drink_your_coffeePrefix &&
+		How_do_you_drink_your_coffeePrefixCopy
+	) {
+		How_do_you_drink_your_coffeePrefixCopy.textContent =
+			How_do_you_drink_your_coffeePrefix.textContent;
+	}
+	if (How_do_you_drink_your_coffee && How_do_you_drink_your_coffeeCopy) {
+		How_do_you_drink_your_coffeeCopy.textContent =
+			How_do_you_drink_your_coffee.textContent;
+	}
+	if (What_type_of_coffee && What_type_of_coffeeCopy) {
+		What_type_of_coffeeCopy.textContent = What_type_of_coffee.textContent;
+	}
+	if (How_much_would_you_like && How_much_would_you_likeCopy) {
+		How_much_would_you_likeCopy.textContent =
+			How_much_would_you_like.textContent;
+	}
+	if (Want_us_to_grind_them && Want_us_to_grind_themCopy) {
+		Want_us_to_grind_themCopy.textContent = Want_us_to_grind_them.textContent;
+	}
+	if (How_often_should_we_deliver && How_often_should_we_deliverCopy) {
+		How_often_should_we_deliverCopy.textContent =
+			How_often_should_we_deliver.textContent;
+	}
+
 	const mask = document.getElementById("mask");
 	if (mask) {
 		if (mask?.style.display === "flex") {

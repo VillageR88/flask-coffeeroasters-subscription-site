@@ -6,7 +6,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   pointer-events: none;
@@ -608,20 +608,30 @@ main.create-your-plan > form > div > div > div:nth-of-type(1) > h3 {
   font-weight: 300;
 }
 
-main.create-your-plan > form > div > div > div:nth-of-type(1) > p {
-  color: white;
+main.create-your-plan > form > div > div > div:nth-of-type(1) > p,
+#mask > div > div:nth-of-type(2) > section > p {
   font-family: fraunces;
   font-size: 24px;
   font-weight: var(--font-black);
   line-height: 40px;
 }
+
+main.create-your-plan > form > div > div > div:nth-of-type(1) > p {
+  color: white;
+}
+
+#mask > div > div:nth-of-type(2) > section > p {
+  color: #83888f;
+}
+
 main.create-your-plan
   > form
   > div
   > div
   > div:nth-of-type(1)
   > p
-  > span:not(.prefix) {
+  > span:not(.prefix),
+#mask > div > div:nth-of-type(2) > section > p > span:not(.prefix) {
   color: #0e8784;
 }
 
