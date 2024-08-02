@@ -11,7 +11,7 @@ p {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -690,13 +690,7 @@ main.create-your-plan
   > span:not(.prefix) {
   color: #0e8784;
 }
-main.create-your-plan
-  > form
-  > div
-  > div
-  > div:nth-of-type(1)
-  > p
-  > span:not(.prefix),
+
 #mask > div > div:nth-of-type(2) > section > p:nth-of-type(2) {
   font-family: barlow;
   font-size: 16px;
