@@ -190,3 +190,13 @@ function checkOrderSummary() {
         ? buttonCreateMyPlan === null || buttonCreateMyPlan === void 0 ? void 0 : buttonCreateMyPlan.setAttribute("disabled", "true")
         : buttonCreateMyPlan === null || buttonCreateMyPlan === void 0 ? void 0 : buttonCreateMyPlan.removeAttribute("disabled");
 }
+function handleMask() {
+    var mask = document.getElementById("mask");
+    if (mask) {
+        if ((mask === null || mask === void 0 ? void 0 : mask.style.display) === "flex") {
+            mask.style.display = "none";
+        }
+        else
+            mask.style.display = "flex";
+    }
+}

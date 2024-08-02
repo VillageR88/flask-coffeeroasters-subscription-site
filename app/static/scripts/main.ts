@@ -217,3 +217,12 @@ function checkOrderSummary() {
 		? buttonCreateMyPlan?.setAttribute("disabled", "true")
 		: buttonCreateMyPlan?.removeAttribute("disabled");
 }
+
+function handleMask() {
+	const mask = document.getElementById("mask");
+	if (mask) {
+		if (mask?.style.display === "flex") {
+			mask.style.display = "none";
+		} else mask.style.display = "flex";
+	}
+}
