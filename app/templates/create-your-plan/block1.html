@@ -1,8 +1,21 @@
 <div>
-  <img
-    src="../static/images/plan/desktop/image-hero-blackcup.jpg"
-    alt="image of coffe with flower pattern"
-  />
+  <picture>
+    <source
+      media="(max-width: 768px)"
+      srcset="../static/images/plan/mobile/image-hero-blackcup.jpg"
+    />
+
+    <source
+      media="(max-width: 1280px)"
+      srcset="../static/images/plan/tablet/image-hero-blackcup.jpg"
+    />
+
+    <img
+      src="../static/images/plan/desktop/image-hero-blackcup.jpg"
+      alt="Coffee Press"
+      class="hero-image"
+    />
+  </picture>
   <section>
     <h1>Create plan</h1>
     <p>

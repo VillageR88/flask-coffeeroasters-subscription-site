@@ -33,10 +33,9 @@ main.about-us > div:nth-of-type(1) > picture > img {
   width: 100%;
   object-fit: cover;
   object-position: right;
-  height: 450px;
 }
 
-main.about-us > div:nth-of-type(1) > div {
+main.about-us > div:nth-of-type(1) > section {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -46,11 +45,11 @@ main.about-us > div:nth-of-type(1) > div {
   margin-left: 85px;
 }
 
-main.about-us > div:nth-of-type(1) > div > h1 {
+main.about-us > div:nth-of-type(1) > section > h1 {
   color: #fefcf7;
 }
 
-main.about-us > div:nth-of-type(1) > div > p {
+main.about-us > div:nth-of-type(1) > section > p {
   color: #fefcf7;
 }
 
@@ -210,6 +209,43 @@ body:has(main.about-us) > footer {
 }
 
 @media screen and (max-width: 768px) {
+  .about-us h1,
+  .about-us h2 {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .about-us p {
+    font-family: barlow;
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  main.about-us > div:nth-of-type(1) {
+    height: fit-content;
+    justify-content: center;
+    max-width: 327px;
+    width: 100%;
+    height: 400px;
+  }
+
+  main.about-us > div:nth-of-type(1) > picture > img {
+    top: 0;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+    min-height: 400px;
+  }
+
+  main.about-us > div:nth-of-type(1) > section {
+    margin-left: 0;
+    padding-inline: 24px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
   main.about-us > div:nth-of-type(2) {
     flex-direction: column;
     height: fit-content;
@@ -217,7 +253,8 @@ body:has(main.about-us) > footer {
 
   main.about-us > div:nth-of-type(2) > picture > img {
     width: 100%;
-    height: 100%;
+    height: 400px;
+    object-fit: cover;
   }
 
   main.about-us > div:nth-of-type(2) > section {
@@ -226,6 +263,8 @@ body:has(main.about-us) > footer {
   }
 
   main.about-us > div:nth-of-type(3) {
+    margin-top: 230px;
+
     padding-inline: 24px;
   }
 
@@ -233,6 +272,15 @@ body:has(main.about-us) > footer {
     margin-top: -78px;
     width: 100%;
     height: 100%;
+  }
+
+  main.about-us > div:nth-of-type(3) > section {
+    width: 100%;
+    padding-inline: 24px;
+  }
+
+  main.about-us > div:nth-of-type(3) > section > h2 {
+    word-break: break-word;
   }
 
   main.about-us > div:nth-of-type(4) {
