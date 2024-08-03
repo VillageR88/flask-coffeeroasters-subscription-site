@@ -212,11 +212,11 @@ main.home > div:nth-of-type(3) > ul > li {
   max-width: 350px;
   width: 100%;
   background-color: #0e8784;
-  height: 382px;
   border-radius: 8px;
   justify-content: center;
   gap: 56px;
   box-sizing: border-box;
+  min-height: 382px;
 }
 
 main.home > div:nth-of-type(3) > ul > li > div {
@@ -330,7 +330,7 @@ body:has(main.home) > footer {
     flex-direction: row;
     max-width: calc(100% - 58px * 2);
     margin-inline: 58px;
-    height: 180px;
+    min-height: 180px;
     gap: 55px;
   }
 
@@ -363,10 +363,57 @@ body:has(main.home) > footer {
   main.home > div:nth-of-type(1) {
     justify-content: center;
   }
+
   main.home > div:nth-of-type(1) > div {
     align-items: center;
     text-align: center;
     padding-inline: 24px;
     margin: 0;
+  }
+
+  main.home > div:nth-of-type(2) {
+    height: fit-content;
+  }
+
+  main.home > div:nth-of-type(2) > div:nth-of-type(1) {
+    height: fit-content;
+  }
+
+  main.home > div:nth-of-type(2) > div:nth-of-type(1) > span {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+
+  main.home > div:nth-of-type(2) > ul {
+    margin-top: 13px;
+    gap: 48px;
+  }
+
+  main.home > div:nth-of-type(2) > ul > li {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  main.home > div:nth-of-type(2) > ul > li > section {
+    align-items: center;
+    text-align: center;
+  }
+
+  main.home > div:nth-of-type(2) > ul > li > img {
+    width: 200px;
+    height: auto;
+  }
+
+  main.home > div:nth-of-type(3) > ul > li {
+    flex-direction: column;
+    min-height: 382px;
+    padding-inline: 12px;
+    padding-top: 72px;
+    padding-bottom: 51px;
+  }
+
+  main.home > div:nth-of-type(3) > ul > li > section {
+    align-items: center;
+    text-align: center;
   }
 }
