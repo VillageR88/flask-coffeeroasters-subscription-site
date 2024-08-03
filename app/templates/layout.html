@@ -35,8 +35,9 @@
   </head>
 
   <body>
-    {% include 'components/navbar.html' %}
     <!-- prettier-ignore -->
+    {% include 'components/mobileNavigation.html' %}
+    {% include 'components/navbar.html' %}
     {% block content %}{% endblock %}
     {% include 'components/footer.html' %}
   </body>

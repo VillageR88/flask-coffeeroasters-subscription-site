@@ -286,3 +286,12 @@ function calculatePrice() {
     if (formattedPerMonthPriceSpan)
         formattedPerMonthPriceSpan.textContent = formattedPerMonthPrice;
 }
+function handleNavbar() {
+    var mobileNavigation = document.getElementById("mobileNavigation");
+    if (mobileNavigation) {
+        if (mobileNavigation.classList.contains("open"))
+            mobileNavigation.classList.remove("open");
+        else
+            mobileNavigation.classList.add("open");
+    }
+}
