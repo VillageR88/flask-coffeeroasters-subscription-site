@@ -48,6 +48,13 @@
   gap: 67px;
 }
 
+.ulHowItWorks > li > section {
+  margin-right: 40px;
+}
+.ulHowItWorks > li:last-child > section {
+  margin-right: 0px;
+}
+
 .ulHowItWorks > li > section > span {
   font-family: fraunces;
   font-size: 72px;
