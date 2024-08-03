@@ -306,6 +306,10 @@ svg.logo > * {
     display: flex;
   }
 
+  nav {
+    padding-inline: 24px;
+  }
+
   nav > ul {
     display: none;
   }
@@ -323,6 +327,10 @@ svg.logo > * {
 
   body:has(.open) nav > button {
     background-image: url("../images/shared/mobile/icon-close.svg");
+  }
+
+  main {
+    width: calc(100% - 48px);
   }
 
   nav > button:hover {
