@@ -1,9 +1,9 @@
 <nav>
   {% include './components/logo.html' %}
   <ul>
-    <li><a href=".">HOME</a></li>
-    <li><a href="about-us">ABOUT US</a></li>
-    <li><a href="create-your-plan">CREATE YOUR PLAN</a></li>
+    {% for link in navLinks %}
+    <li><a href="{{ link.href }}">{{ link.title }}</a></li>
+    {% endfor %}
   </ul>
   <button onclick="handleNavbar()"></button>
 </nav>

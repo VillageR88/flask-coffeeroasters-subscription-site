@@ -41,6 +41,11 @@ def robots_txt():
 
 
 def get_context():
+    navLinks = [
+        {"title": "Home", "href": "."},
+        {"title": "About Us", "href": "about-us"},
+        {"title": "Create Your Plan", "href": "create-your-plan"},
+    ]
     collection = [
         {
             "image": "./static/images/home/desktop/image-gran-espresso.png",
@@ -221,6 +226,7 @@ def get_context():
     ]
     context = {
         "siteTitle": "Coffeeroasters subscription site",
+        "navLinks": navLinks,
         "collection": collection,
         "whyChooseUs": whyChooseUs,
         "howItWorks": howItWorks,

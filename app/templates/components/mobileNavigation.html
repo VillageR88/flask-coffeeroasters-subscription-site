@@ -1,3 +1,7 @@
 <div id="mobileNavigation">
-  <div></div>
+  <ul>
+    {% for link in navLinks %}
+    <li><a href="{{ link.href }}">{{ link.title }}</a></li>
+    {% endfor %}
+  </ul>
 </div>
