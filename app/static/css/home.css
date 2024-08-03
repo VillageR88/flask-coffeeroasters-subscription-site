@@ -261,11 +261,6 @@ main.home > div:nth-of-type(4) > h2 {
   margin-bottom: 80px;
 }
 
-main.home > div:nth-of-type(4) > ul > li {
-  display: flex;
-  flex-direction: column;
-}
-
 main.home .ulHowItWorks > li > section > h2 {
   color: #333d4b;
 }
@@ -415,5 +410,14 @@ body:has(main.home) > footer {
   main.home > div:nth-of-type(3) > ul > li > section {
     align-items: center;
     text-align: center;
+  }
+
+  main.home > div:nth-of-type(4) {
+    margin-top: calc(1449px - 573px + 144px);
+    align-items: center;
+  }
+
+  main.home > div:nth-of-type(4) > h2 {
+    width: fit-content;
   }
 }

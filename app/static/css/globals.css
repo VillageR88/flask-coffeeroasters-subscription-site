@@ -49,6 +49,8 @@
 }
 
 .ulHowItWorks > li > section {
+  display: flex;
+  flex-direction: column;
   margin-right: 40px;
 }
 .ulHowItWorks > li:last-child > section {
@@ -74,7 +76,6 @@
 
 .ulHowItWorks > li > section > p {
   max-width: 285px;
-  margin-top: 42px;
   font-family: barlow;
   font-size: 16px;
   font-weight: 400;
@@ -326,5 +327,26 @@ svg.logo > * {
 
   nav > button:hover {
     cursor: pointer;
+  }
+
+  .circleLine {
+    display: none;
+  }
+
+  .ulHowItWorks {
+    width: fit-content;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .ulHowItWorks > li {
+    text-align: center;
+  }
+
+  .ulHowItWorks > li > section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
   }
 }
