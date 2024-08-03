@@ -1,5 +1,5 @@
 <div>
-  <div>
+  <section>
     <h2>Uncompromising quality</h2>
     <p>
       Although we work with growers who pay close attention to all stages of
@@ -8,6 +8,22 @@
       coffee is tagged with a roast date and batch number. Our goal is to roast
       consistent, user-friendly coffee, so that brewing is easy and enjoyable.
     </p>
-  </div>
-  <img src="../static/images/about/desktop/image-quality.jpg" />
+  </section>
+  <picture>
+    <source
+      media="(max-width: 768px)"
+      srcset="../static/images/about/mobile/image-quality.jpg"
+    />
+
+    <source
+      media="(max-width: 1110px)"
+      srcset="../static/images/about/tablet/image-quality.jpg"
+    />
+
+    <img
+      src="../static/images/about/desktop/image-quality.jpg"
+      alt="Coffee Press"
+      class="hero-image"
+    />
+  </picture>
 </div>
