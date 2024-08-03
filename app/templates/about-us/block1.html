@@ -1,7 +1,21 @@
 <div>
-  <img
-    src="../static/images/about/desktop/image-hero-whitecup.jpg"
-  />
+  <picture>
+    <source
+      media="(max-width: 768px)"
+      srcset="../static/images/about/mobile/image-hero-whitecup.jpg"
+    />
+
+    <source
+      media="(max-width: 1110px)"
+      srcset="../static/images/about/tablet/image-hero-whitecup.jpg"
+    />
+
+    <img
+      src="../static/images/about/desktop/image-hero-whitecup.jpg"
+      alt="Coffee Press"
+      class="hero-image"
+    />
+  </picture>
   <div>
     <h1>About Us</h1>
     <p>

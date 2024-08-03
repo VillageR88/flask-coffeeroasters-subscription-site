@@ -25,9 +25,15 @@ main.about-us > div:nth-of-type(1) {
   width: 100%;
   height: 450px;
 }
-main.about-us > div:nth-of-type(1) > img {
+
+main.about-us > div:nth-of-type(1) > picture > img {
+  top: 0;
   border-radius: 10px;
   position: absolute;
+  width: 100%;
+  object-fit: cover;
+  object-position: right;
+  height: 450px;
 }
 
 main.about-us > div:nth-of-type(1) > div {
@@ -57,14 +63,14 @@ main.about-us > div:nth-of-type(2) {
   height: 520px;
 }
 
-main.about-us > div:nth-of-type(2) > img {
+main.about-us > div:nth-of-type(2) > picture > img {
   border-radius: 8px;
 }
 
 main.about-us > div:nth-of-type(2) > div {
   display: flex;
   flex-direction: column;
-  max-width: 540px;
+  max-width: 538px;
   gap: 32px;
   color: #333d4b;
 }
@@ -155,6 +161,27 @@ main.about-us > div:nth-of-type(4) > ul > li > div > section {
   line-height: 26px;
 }
 
+.about-us p {
+  font-size: 15px;
+}
+
 body:has(main.about-us) > footer {
   margin-top: 168px;
+}
+
+@media screen and (max-width: 1110px) {
+  .about-us h1,
+  .about-us h2 {
+    font-size: 32px;
+  }
+
+  main.about-us > div:nth-of-type(2) {
+    max-width: 689px;
+    gap: 40px;
+  }
+
+  main.about-us > div:nth-of-type(2) > div {
+    max-width: 339px;
+    width: 100%;
+  }
 }
