@@ -316,8 +316,8 @@ main.create-your-plan
   appearance: none;
   background-image: url("../images/plan/desktop/icon-arrow.svg");
   background-repeat: no-repeat;
-  width: 19px;
-  height: 13px;
+  min-width: 19px;
+  min-height: 13px;
   transition: transform 0.3s;
 }
 
@@ -706,11 +706,24 @@ body:has(main.create-your-plan) > footer {
 
 @media screen and (max-width: 768px) {
   main.create-your-plan > form > div > div > ul:nth-of-type(1) > li > ul {
-    grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  main.create-your-plan > div:nth-of-type(1) > section {
+    padding-inline: 24px;
+    padding-top: 101px;
+    margin: 0;
+    text-align: center;
+    height: fit-content;
   }
 
   main.create-your-plan > div:nth-of-type(2) {
     align-items: center;
+    width: calc(100% + 48px);
+    margin-top: 120px;
+  }
+  main.create-your-plan > form > div {
+    margin-top: 120px;
   }
 
   main.create-your-plan
@@ -754,5 +767,9 @@ body:has(main.create-your-plan) > footer {
     height: fit-content;
     padding-block: 32px;
     padding-inline: 24px;
+  }
+
+  body:has(main.create-your-plan) > footer {
+    margin-top: 120px;
   }
 }
