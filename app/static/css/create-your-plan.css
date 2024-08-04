@@ -3,100 +3,9 @@ p {
   margin: 0;
 }
 
-#mask {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-#mask > div {
-  max-width: 540px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-#mask > div > div:nth-of-type(1) {
-  width: 100%;
-  height: 136px;
-  background-color: #333d4b;
-  border-radius: 8px 8px 0 0;
-  display: flex;
-  align-items: center;
-  padding-inline: 56px;
-  box-sizing: border-box;
-}
-
-#mask > div > div:nth-of-type(1) > h2 {
+form {
   margin: 0;
-  color: white;
-  font-family: fraunces;
-  font-size: 40px;
-  font-weight: var(--font-black);
-  line-height: 48px;
-}
-
-#mask > div > div:nth-of-type(2) {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: fit-content;
-  background-color: #fefcf7;
-  border-radius: 0 0 8px 8px;
-  padding: 56px;
-  box-sizing: border-box;
-  gap: 47px;
-}
-
-#mask > div > div:nth-of-type(2) > section {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-#mask > div > div:nth-of-type(2) > div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#mask > div > div:nth-of-type(2) > div > span {
-  font-family: fraunces;
-  font-size: 32px;
-  font-weight: var(--font-black);
-  line-height: 36px;
-  color: #333d4b;
-}
-
-#mask > div > div:nth-of-type(2) > div > button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
-  background-color: #0e8784;
-  width: 217px;
-  height: 56px;
-  box-sizing: border-box;
-  border: none;
-  color: #fefcf7;
-  font-family: fraunces;
-  font-size: 18px;
-  font-weight: var(--font-black);
-  line-height: 25px;
-  transition: background-color 0.15s;
-}
-
-#mask > div > div:nth-of-type(2) > div > button:hover {
-  cursor: pointer;
-  background-color: #66d2cf;
+  padding: 0;
 }
 
 .create-your-plan h1,
@@ -666,6 +575,10 @@ main.create-your-plan > form > div > div > div:nth-of-type(1) > h3 {
   font-weight: 300;
 }
 
+main.create-your-plan > form > div > div > div:nth-of-type(1) > p {
+  color: white;
+}
+
 main.create-your-plan > form > div > div > div:nth-of-type(1) > p,
 #mask > div > div:nth-of-type(2) > section > p:nth-of-type(1) {
   font-family: fraunces;
@@ -673,11 +586,6 @@ main.create-your-plan > form > div > div > div:nth-of-type(1) > p,
   font-weight: var(--font-black);
   line-height: 40px;
 }
-
-main.create-your-plan > form > div > div > div:nth-of-type(1) > p {
-  color: white;
-}
-
 #mask > div > div:nth-of-type(2) > section > p:nth-of-type(1) {
   color: #83888f;
 }

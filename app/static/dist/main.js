@@ -191,6 +191,7 @@ function checkOrderSummary() {
         : buttonCreateMyPlan === null || buttonCreateMyPlan === void 0 ? void 0 : buttonCreateMyPlan.removeAttribute("disabled");
 }
 function handleMask() {
+    scrollTo(0, 0);
     var How_do_you_drink_your_coffeePrefix = document.getElementById("How_do_you_drink_your_coffeePrefix");
     var How_do_you_drink_your_coffeePrefixCopy = document.getElementById("How_do_you_drink_your_coffeePrefixCopy");
     var How_do_you_drink_your_coffee = document.getElementById("How_do_you_drink_your_coffee");

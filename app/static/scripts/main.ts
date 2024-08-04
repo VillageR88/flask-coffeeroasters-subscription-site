@@ -219,6 +219,7 @@ function checkOrderSummary() {
 }
 
 function handleMask() {
+	scrollTo(0, 0);
 	const How_do_you_drink_your_coffeePrefix = document.getElementById(
 		"How_do_you_drink_your_coffeePrefix",
 	);
