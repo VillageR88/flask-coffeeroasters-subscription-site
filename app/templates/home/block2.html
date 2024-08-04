@@ -1,0 +1,22 @@
+<div>
+  <div>
+    <span>our collection</span>
+  </div>
+  <ul>
+    {% for item in collection %}
+    <li>
+      <img
+        class="collectionImage"
+        width="255"
+        height="193"
+        src="{{ item.image }}"
+        alt="{{ item.name }}"
+      />
+      <section>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
+      </section>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

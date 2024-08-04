@@ -1,0 +1,19 @@
+<footer>
+  <div>
+    <div>
+      {% include './components/logo.html' %}
+      <ul>
+        <li><a href=".">HOME</a></li>
+        <li><a href="about-us">ABOUT US</a></li>
+        <li><a href="create-your-plan">CREATE YOUR PLAN</a></li>
+      </ul>
+    </div>
+    <ul>
+      {% for item in social %}
+      <li>
+        <a title="{{ item.title }}" href="#">{% include item.component %}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</footer>

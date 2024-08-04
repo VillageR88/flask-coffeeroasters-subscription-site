@@ -1,0 +1,15 @@
+<ul class="ulHowItWorks">
+  {% for item in howItWorks %}
+  <li>
+    <div class="circleLine">
+      <div class="circle"></div>
+      <div class="line"></div>
+    </div>
+    <section>
+      <span>{{ "%02d" | format(loop.index) }}</span>
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.description }}</p>
+    </section>
+  </li>
+  {% endfor %}
+</ul>

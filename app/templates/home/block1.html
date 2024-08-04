@@ -1,0 +1,28 @@
+<div>
+  <picture>
+    <source
+      media="(max-width: 768px)"
+      srcset="../static/images/home/mobile/image-hero-coffeepress.jpg"
+    />
+
+    <source
+      media="(max-width: 1024px)"
+      srcset="../static/images/home/tablet/image-hero-coffeepress.jpg"
+    />
+
+    <img
+      src="../static/images/home/desktop/image-hero-coffeepress.jpg"
+      alt="Coffee Press"
+      class="hero-image"
+    />
+  </picture>
+  <div>
+    <h1>Great coffee made simple.</h1>
+    <p>
+      Start your mornings with the world’s best coffees. Try our expertly
+      curated artisan coffees from our best roasters delivered directly to your
+      door, at your schedule.
+    </p>
+    {% include './components/buttonCreatePlan.html' %}
+  </div>
+</div>
