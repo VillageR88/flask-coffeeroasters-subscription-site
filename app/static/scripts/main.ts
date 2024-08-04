@@ -338,7 +338,7 @@ function calculatePrice() {
 	} else if (How_often_should_we_deliver?.textContent === everyMonth) {
 		perMonthPrice = perShipmentPrice * 1;
 	}
-	const formattedPerMonthPrice = `${perMonthPrice.toFixed(2)} / mo`;
+	const formattedPerMonthPrice = `${`$${perMonthPrice.toFixed(2)}`} / mo`;
 	const formattedPerMonthPriceSpan = document.getElementById(
 		"formattedPerMonthPriceSpan",
 	);
@@ -356,3 +356,25 @@ function handleNavbar() {
 		else mobileNavigation.classList.add("open");
 	}
 }
+
+document.getElementById("mask")?.addEventListener("submit", (event: Event) => {
+	event.preventDefault();
+
+	const form = event.target as HTMLFormElement;
+	const formData = new FormData(form);
+
+	fetch(form.action, {
+		method: form.method,
+		body: formData,
+	})
+		.then((response) => {
+			if (response.ok) {
+				window.location.href = "./";
+			} else {
+				console.error("Form submission failed");
+			}
+		})
+		.catch((error) => {
+			console.error("Error:", error);
+		});
+});

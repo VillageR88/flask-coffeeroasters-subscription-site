@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 // experimentalFunction1 - ^0.1.x by VillageR88 (https://github.com/VillageR88)
 /**
  * The experimentalFunction1 implements a basic client-side rendering mechanism for a single-page application.
@@ -283,7 +284,7 @@ function calculatePrice() {
     else if ((How_often_should_we_deliver === null || How_often_should_we_deliver === void 0 ? void 0 : How_often_should_we_deliver.textContent) === everyMonth) {
         perMonthPrice = perShipmentPrice * 1;
     }
-    var formattedPerMonthPrice = "".concat(perMonthPrice.toFixed(2), " / mo");
+    var formattedPerMonthPrice = "".concat("$".concat(perMonthPrice.toFixed(2)), " / mo");
     var formattedPerMonthPriceSpan = document.getElementById("formattedPerMonthPriceSpan");
     if (formattedPerMonthPriceSpan)
         formattedPerMonthPriceSpan.textContent = formattedPerMonthPrice;
@@ -299,3 +300,23 @@ function handleNavbar() {
             mobileNavigation.classList.add("open");
     }
 }
+(_a = document.getElementById("mask")) === null || _a === void 0 ? void 0 : _a.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var form = event.target;
+    var formData = new FormData(form);
+    fetch(form.action, {
+        method: form.method,
+        body: formData,
+    })
+        .then(function (response) {
+        if (response.ok) {
+            window.location.href = "./";
+        }
+        else {
+            console.error("Form submission failed");
+        }
+    })
+        .catch(function (error) {
+        console.error("Error:", error);
+    });
+});
