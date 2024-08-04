@@ -238,6 +238,7 @@ function handleMask() {
     }
 }
 function calculatePrice() {
+    var buttonMobileCheckout = document.getElementById("buttonMobileCheckout");
     var How_much_would_you_like = document.getElementById("How_much_would_you_like");
     var How_often_should_we_deliver = document.getElementById("How_often_should_we_deliver");
     var weight250g = "250g";
@@ -286,6 +287,8 @@ function calculatePrice() {
     var formattedPerMonthPriceSpan = document.getElementById("formattedPerMonthPriceSpan");
     if (formattedPerMonthPriceSpan)
         formattedPerMonthPriceSpan.textContent = formattedPerMonthPrice;
+    if (buttonMobileCheckout)
+        buttonMobileCheckout.textContent = "Checkout - ".concat(formattedPerMonthPrice);
 }
 function handleNavbar() {
     var mobileNavigation = document.getElementById("mobileNavigation");

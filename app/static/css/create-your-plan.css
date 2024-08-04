@@ -586,6 +586,7 @@ main.create-your-plan > form > div > div > div:nth-of-type(1) > p,
   font-weight: var(--font-black);
   line-height: 40px;
 }
+
 #mask > div > div:nth-of-type(2) > section > p:nth-of-type(1) {
   color: #83888f;
 }
@@ -604,10 +605,6 @@ main.create-your-plan
   > p:nth-of-type(1)
   > span:not(.prefix) {
   color: #0e8784;
-}
-
-#mask > div > div:nth-of-type(2) > div > button:nth-last-of-type(2) {
-  display: none;
 }
 
 #mask > div > div:nth-of-type(2) > section > p:nth-of-type(2) {
@@ -785,7 +782,11 @@ body:has(main.create-your-plan) > footer {
     display: none;
   }
 
-  #mask > div > div:nth-of-type(2) > div > button:nth-last-of-type(1) {
+  #mask > div > div:nth-of-type(2) > div > button:nth-of-type(1) {
     display: none;
+  }
+  
+  #mask > div > div:nth-of-type(2) > div > button:nth-of-type(2) {
+    display: flex;
   }
 }

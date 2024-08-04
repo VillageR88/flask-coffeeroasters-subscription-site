@@ -134,7 +134,6 @@ main {
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 3;
-  /* display: none; */
   display: none;
   justify-content: center;
   align-items: center;
@@ -210,7 +209,6 @@ main {
   align-items: center;
   border-radius: 6px;
   background-color: #0e8784;
-  width: 217px;
   height: 56px;
   box-sizing: border-box;
   border: none;
@@ -220,6 +218,18 @@ main {
   font-weight: var(--font-black);
   line-height: 25px;
   transition: background-color 0.15s;
+}
+
+#mask > div > div:nth-of-type(2) > div > button:nth-of-type(2) {
+  display: none;
+}
+
+#mask > div > div:nth-of-type(2) > div > button:nth-of-type(1) {
+  width: 217px;
+}
+
+#mask > div > div:nth-of-type(2) > div > button:nth-of-type(2) {
+  width: 100%;
 }
 
 #mask > div > div:nth-of-type(2) > div > button:hover {
@@ -235,7 +245,6 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-color: rgba(0, 0, 0, 0.5); */
   background: linear-gradient(
     180deg,
     #fefcf7 50%,
@@ -479,6 +488,11 @@ svg.logo > * {
 
   #mask > div {
     max-height: 100dvh;
+  }
+
+  #mask > div > div:nth-of-type(1) {
+    min-height: 88px;
+    height: 88px;
   }
 
   #mask > div > div:nth-of-type(1) > h2 {

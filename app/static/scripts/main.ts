@@ -290,6 +290,7 @@ function handleMask() {
 }
 
 function calculatePrice() {
+	const buttonMobileCheckout = document.getElementById("buttonMobileCheckout");
 	const How_much_would_you_like = document.getElementById(
 		"How_much_would_you_like",
 	);
@@ -343,6 +344,8 @@ function calculatePrice() {
 	);
 	if (formattedPerMonthPriceSpan)
 		formattedPerMonthPriceSpan.textContent = formattedPerMonthPrice;
+	if (buttonMobileCheckout)
+		buttonMobileCheckout.textContent = `Checkout - ${formattedPerMonthPrice}`;
 }
 
 function handleNavbar() {
