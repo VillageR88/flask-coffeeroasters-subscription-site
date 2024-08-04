@@ -606,6 +606,10 @@ main.create-your-plan
   color: #0e8784;
 }
 
+#mask > div > div:nth-of-type(2) > div > button:nth-last-of-type(2) {
+  display: none;
+}
+
 #mask > div > div:nth-of-type(2) > section > p:nth-of-type(2) {
   font-family: barlow;
   font-size: 16px;
@@ -771,5 +775,17 @@ body:has(main.create-your-plan) > footer {
 
   body:has(main.create-your-plan) > footer {
     margin-top: 120px;
+  }
+
+  #mask > div > div:nth-of-type(2) > section > p:nth-of-type(2) {
+    font-size: 15px;
+  }
+
+  #mask > div > div:nth-of-type(2) > div > span {
+    display: none;
+  }
+
+  #mask > div > div:nth-of-type(2) > div > button:nth-last-of-type(1) {
+    display: none;
   }
 }

@@ -480,4 +480,9 @@ svg.logo > * {
   #mask > div {
     max-height: 100dvh;
   }
+
+  #mask > div > div:nth-of-type(1) > h2 {
+    font-size: 28px;
+    line-height: 42px;
+  }
 }
